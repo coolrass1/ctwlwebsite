@@ -1,7 +1,11 @@
+import Heading from './components/Heading'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter,Poppins,Open_Sans, Montserrat} from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+const open = Open_Sans({ subsets: ['latin-ext'] })
+const poppins = Poppins({ subsets: ['latin'] , weight:['500','200']})
+const monserat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={monserat.className}>
+        <Heading/>{children}</body>
     </html>
   )
 }
