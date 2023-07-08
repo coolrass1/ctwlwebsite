@@ -1,3 +1,4 @@
+import Footer from './components/Footer'
 import Heading from './components/Heading'
 import './globals.css'
 import { Inter,Poppins,Open_Sans, Montserrat} from 'next/font/google'
@@ -15,8 +16,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={monserat.className}>
-        <Heading/>{children}</body>
+      <body className={poppins.className}>
+        <Heading/>{children}<Footer/></body>
     </html>
   )
 }

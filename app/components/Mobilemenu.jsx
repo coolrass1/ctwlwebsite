@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { FaSearch } from "react-icons/fa";
+import { FaSearch,FaRegWindowClose} from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Logo from "./Logo";
 
@@ -20,10 +20,10 @@ const Mobilemenu = () => {
             <FaSearch />
           </div>
           <div onClick={HandleClick} className="flex items-center justify-center mr-3 text-3xl ">
-            <GiHamburgerMenu />
+            {openNav?<FaRegWindowClose/>:<GiHamburgerMenu />}
           </div>
         </div>
-        <ul className={`${openNav?'block':'hidden'} fixed  left-0 right-0 flex flex-col justify-start  py-3 items-start gap-1 text-white  bg-black`}>
+        <ul className={`${openNav?'fixed':'hidden'} z-50  left-0 right-0 flex flex-col justify-start  py-7 pb-[120px] items-start gap-1 text-white  bg-black`}>
             <li className=" w-full px-2 py-2 hover:bg-green-600">
               <Link href="#">Home</Link>
             </li>

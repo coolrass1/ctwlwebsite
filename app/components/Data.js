@@ -17,6 +17,15 @@ export const area = {
   content:
     "Established in June 2000, Citywide is an executive chauffeur company of the highest quality. Professionalism comes as standard with both our VIP Chauffeur Service and Chauffeur Car Hire. We pride ourselves on a customized service tailored to suit your needs offering a combination of comfort and safety on the road.",
 };
+export const area9 = {
+  id: 2,
+  btncontent: "Get a Quote",
+  title: "Sightseeing tours, airport transfers and more",
+  urllink: "url(/images/area9.jpg)",
+  source: "https://www.youtube.com/embed/EJ4n_HVboxs?autoplay=1&mute=1",
+  content:"If you want to see a variety of sights in the city, we can plan your route and stop off whenever and wherever you would like while your professional chauffeur waits on you as you explore. We also offer VIP airport chauffeur service for private charter airports such as Farnborough airport, Luton Private airport and Biggin Hill airport as well as most other major private airports across the country for your added convenience."
+    
+}
 
 export const gallery = [
   { id: 1, gurl: "/images/gallery1.jpg" },

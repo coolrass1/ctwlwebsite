@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 const open = Open_Sans({ subsets: ["latin-ext"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["500", "200"] });
 const monserat = Montserrat({ subsets: ["latin"] });
-import {area , area1} from '/app/components/Data.js'
+import {area , area1,area9} from '/app/components/Data.js'
 import Area6 from "./components/Area6";
 import { Area7 } from "./components/Area7";
 import Area8 from "./components/Area8";
@@ -38,7 +38,7 @@ const page = () => {
       <Area6/>
       <Area7/>
       <Area8/>
-      <Area1 ctp={area}/>
+      <Area1 ctp={area9}/>
     </>
   );
 };
