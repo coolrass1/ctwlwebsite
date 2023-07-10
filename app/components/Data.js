@@ -33,3 +33,11 @@ export const gallery = [
   { id: 3, gurl: "/images/gallery3.jpeg" },
   { id: 4, gurl: "/images/gallery4.png" },
 ];
+
+
+export const gallery1 = [
+  { id: 1, gurl: "/images/gallery2/pic1.jpeg" },
+  { id: 2, gurl: "/images/gallery2/pic2.jpeg" },
+  { id: 3, gurl: "/images/gallery2/pic3.png" },
+  { id: 4, gurl: "/images/gallery2/pic4.jpg" },
+];

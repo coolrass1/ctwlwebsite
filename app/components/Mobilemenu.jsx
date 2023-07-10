@@ -19,9 +19,9 @@ const Mobilemenu = () => {
           <div className="flex items-center justify-center mr-5 ">
             <FaSearch />
           </div>
-          <div onClick={HandleClick} className="flex items-center justify-center mr-3 text-3xl ">
+          <button onClick={HandleClick} className="flex items-center justify-center mr-3 text-3xl ">
             {openNav?<FaRegWindowClose/>:<GiHamburgerMenu />}
-          </div>
+          </button>
         </div>
         <ul className={`${openNav?'fixed':'hidden'} z-50  left-0 right-0 flex flex-col justify-start  py-7 pb-[120px] items-start gap-1 text-white  bg-black`}>
             <li className=" w-full px-2 py-2 hover:bg-green-600">

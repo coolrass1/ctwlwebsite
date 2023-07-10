@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +9,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Logo from "./Logo";
 import Mobilemenu from "./Mobilemenu";
 
+
 const Heading = () => {
+
   return (
     <section>
       <div className="  hidden md:flex flex-col  gap-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl ">
@@ -85,35 +88,35 @@ const Heading = () => {
         </div>
         <nav className="hidden md:flex justify-between items-center bg-black text-white">
           <ul className="flex justify-between items-center gap-3">
-            <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Home</Link>
+            <li  className=" py-7 px-2 hover:bg-green-600">
+              <Link href="/">Home</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">About us</Link>
+              <Link href="/about">About us</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Fleet</Link>
+              <Link href="/fleet">Fleet</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Quotes request</Link>
+              <Link href="/quotes">Quotes request</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Weddings</Link>
+              <Link href="/weddings">Weddings</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Meetings & Events</Link>
+              <Link href="/meetings">Meetings & Events</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Airport transfer</Link>
+              <Link href="/airport">Airport transfer</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Concierge</Link>
+              <Link href="/concierge">Concierge</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
-              <Link href="#">Bookin</Link>
+              <Link href="/booking">Booking</Link>
             </li>
           </ul>
           <div className="flex items-center justify-center mr-5 ">
