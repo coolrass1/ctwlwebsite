@@ -18,7 +18,7 @@ const Aboutcont = () => {
   };
   return (
     <>  <ModalGallery2 isOpen={isOpen} Handleisopen={Handleisopen} />
-    <HeroAbout />
+    <HeroAbout title="About us" />
     <main className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl grid grid-cols-1  gap-7 md:grid-cols-2">
       <div className="flex flex-col gap-3 pt-14">
         <h1 className="text-2xl">Our Company</h1>{" "}

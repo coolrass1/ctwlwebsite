@@ -41,3 +41,5 @@ export const gallery1 = [
   { id: 3, gurl: "/images/gallery2/pic3.png" },
   { id: 4, gurl: "/images/gallery2/pic4.jpg" },
 ];
+
+export const cars =[{id:1,title:'', urlimg:''}]
