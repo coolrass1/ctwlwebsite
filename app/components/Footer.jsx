@@ -10,7 +10,7 @@ import {  GrMail } from "react-icons/gr";
 const Footer = () => {
   return (
     <section className="bg-black text-white mt-16">
-      <div className="py-5 md:text-sm md:grid md:grid-cols-3 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl">
+      <div className="py-5 md:text-sm md:grid md:grid-cols-3 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
         <div className=" px-6">
           <h1 className="mb-2 text-xl">About us</h1>
           <div className="w-24 h-[3px] bg-green-900 "></div>

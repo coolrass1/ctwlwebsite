@@ -6,7 +6,7 @@ import { BiCheckboxChecked } from "react-icons/bi";
 import { TbMathGreater } from "react-icons/tb";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { MdKeyboardArrowDown} from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import Logo from "./Logo";
 import Mobilemenu from "./Mobilemenu";
 import FleetHeader from "./FleetHeader";
@@ -95,35 +95,43 @@ const Heading = () => {
               <Link href="/about">About us</Link>
             </li>
             <li className=" relative py-7  hover:bg-green-600 [&>*:nth-child(2)]:hover:z-50 [&>*:nth-child(2)]:hover:opacity-100">
-              <Link href="/fleet" className="flex gap-1 justify-center items-center"><span className="pl-2">Fleet</span><MdKeyboardArrowDown className="text-lg"/></Link>
-             {/* floating  */}
-             <ul className={` fixed opacity-0 z-[-99] text-black top-[230px]   flex flex-col gap-2 bg-neutral-100 shadow-2xl py-2`}>
-                  <li className=' hover:bg-teal-500  py-1 pl-2 pr-28'>
-                    <Link href="/" >BMW 7i Series </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500 py-1 pl-2 pr-28'>
-                    <Link href="/">BMW 7 Series </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500  py-1 pl-2 pr-28'>
-                    <Link href="/">Mercedes S Class </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500  py-1 pl-2 pr-28'>
-                    <Link href="/">Mercedes E Class </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500 py-1 pl-2 pr-28'>
-                    <Link href="/">BMW 5 Series </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500  py-1 pl-2 pr-28'>
-                    <Link href="/">Mercedes Viano </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500  py-1 pl-2 pr-28'>
-                    <Link href="/">Rolls Royce Phantom </Link>
-                  </li>
-                  <li className=' hover:bg-teal-500 py-1 pl-2 pr-28'>
-                    <Link href="/">Coaches </Link>
-                  </li>
-                </ul>
-             {/* floation */}
+              <Link
+                href="/fleet"
+                className="flex gap-1 justify-center items-center"
+              >
+                <span className="pl-2">Fleet</span>
+                <MdKeyboardArrowDown className="text-lg" />
+              </Link>
+              {/* floating  */}
+              <ul
+                className={` fixed opacity-0 z-[-99] text-black top-[230px]   flex flex-col gap-2 bg-neutral-100 shadow-slate-900 shadow-2xl py-2`}
+              >
+                <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
+                  <Link href="/fleet/BMW-7i-Series">BMW 7i Series </Link>
+                </li>
+                <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
+                  <Link href="/fleet/BMW-7-Series">BMW 7 Series </Link>
+                </li>
+                <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
+                  <Link href="/">Mercedes S Class </Link>
+                </li>
+                <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
+                  <Link href="/">Mercedes E Class </Link>
+                </li>
+                <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
+                  <Link href="/">BMW 5 Series </Link>
+                </li>
+                <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
+                  <Link href="/">Mercedes Viano </Link>
+                </li>
+                <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
+                  <Link href="/">Rolls Royce Phantom </Link>
+                </li>
+                <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
+                  <Link href="/">Coaches </Link>
+                </li>
+              </ul>
+              {/* floation */}
             </li>
             <li className=" py-7 px-2 hover:bg-green-600">
               <Link href="/quotes">Quotes request</Link>

@@ -10,6 +10,7 @@ import NextButton from "./NextButton";
 import Backbutton from "./Backbutton";
 import Dotsbullet from "./Dotsbullet";
 import { useState } from "react";
+import { carsmain } from "./Data";
 
 const SwiperHolder = () => {
   const [slideindex, setSlideindex]=useState(0)
@@ -42,7 +43,7 @@ const SwiperHolder = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => {{console.log("slide change"+JSON.stringify(Swiper))}}}
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <CarsItem />
         </SwiperSlide>
         <SwiperSlide>
@@ -59,7 +60,10 @@ const SwiperHolder = () => {
         </SwiperSlide>
         <SwiperSlide>
           <CarsItem />
-        </SwiperSlide>
+        </SwiperSlide> */}
+        {carsmain?.map(car=><SwiperSlide key={car}>
+          <CarsItem car={car} />
+        </SwiperSlide>)}
 
         <span
           className=" pb-14 md:flex md:justify-between  md:gap-6  md:mb-7 md:mr-28"

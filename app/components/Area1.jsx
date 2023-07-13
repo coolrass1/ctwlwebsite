@@ -26,7 +26,7 @@ const Area1 = ({ctp}) => {
         className="hidden md:flex  md:flex-1 h-[420px] justify-center items-center"
         style={{ backgroundImage: `${ctp?.urllink} ` , backgroundPosition:'center center' , backgroundRepeat:'no-repeat', backgroundSize:"850px"}}
       >
-       <div onClick={e=>setShowModal(true)} className="text-3xl border-4 p-7 rounded-full border-white"><FaPlay/></div>
+       <div onClick={e=>setShowModal(true)} className="text-3xl border-4 p-7 rounded-full border-white cursor-pointer"><FaPlay/></div>
       </article>
       <Modal setShowModal={setShowModal} showModal={showModal} source={ctp?.source}/>
     </section>

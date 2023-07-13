@@ -23,9 +23,9 @@ export const area9 = {
   title: "Sightseeing tours, airport transfers and more",
   urllink: "url(/images/area9.jpg)",
   source: "https://www.youtube.com/embed/EJ4n_HVboxs?autoplay=1&mute=1",
-  content:"If you want to see a variety of sights in the city, we can plan your route and stop off whenever and wherever you would like while your professional chauffeur waits on you as you explore. We also offer VIP airport chauffeur service for private charter airports such as Farnborough airport, Luton Private airport and Biggin Hill airport as well as most other major private airports across the country for your added convenience."
-    
-}
+  content:
+    "If you want to see a variety of sights in the city, we can plan your route and stop off whenever and wherever you would like while your professional chauffeur waits on you as you explore. We also offer VIP airport chauffeur service for private charter airports such as Farnborough airport, Luton Private airport and Biggin Hill airport as well as most other major private airports across the country for your added convenience.",
+};
 
 export const gallery = [
   { id: 1, gurl: "/images/gallery1.jpg" },
@@ -34,7 +34,6 @@ export const gallery = [
   { id: 4, gurl: "/images/gallery4.png" },
 ];
 
-
 export const gallery1 = [
   { id: 1, gurl: "/images/gallery2/pic1.jpeg" },
   { id: 2, gurl: "/images/gallery2/pic2.jpeg" },
@@ -42,4 +41,13 @@ export const gallery1 = [
   { id: 4, gurl: "/images/gallery2/pic4.jpg" },
 ];
 
-export const cars =[{id:1,title:'', urlimg:''}]
+export const carsmain = [
+  { id: 1, title: "BMW 7 Series", imageSrc: "/images/cars/bmw7series/main.jpg" },
+  { id: 1, title: "BMW 5 Series", imageSrc: "/images/cars/bmw5series/main.jpeg" },
+  {id:1,title:'BMW 7i Series', imageSrc:'/images/cars/bmw7iseries/main.jpg'},
+  { id: 1, title: "mercedes e class", imageSrc: "/images/cars/mercedes_e_class/main.jpg" },
+  { id: 1, title: "mercedes s class", imageSrc: "/images/cars/mercedes_s_class/main.jpg" },
+  { id: 1, title: "mercedes  viano", imageSrc: "/images/cars/mercedesviano/main.jpg" },
+  { id: 1, title: "rolls roys", imageSrc: "/images/cars/rollsroys/main.jpg" },
+
+];

@@ -22,7 +22,7 @@ const Area8 = () => {
           isOpen
             ? "opacity-0 hidden tranlate-y-[2000px]"
             : " block opacity-100 tranlate-y-[1px]"
-        } transition container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl mb-14 pb-5 grid grid-cols-1 md:grid-cols-2 md:gap-14`}
+        } transition container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl mb-14 pb-5 grid grid-cols-1 md:grid-cols-2 md:gap-14`}
       >
         <div>
           <h1 className="text-xl text-center">Photo Gallery</h1>

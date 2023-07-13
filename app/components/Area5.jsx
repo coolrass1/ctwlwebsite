@@ -8,7 +8,7 @@ import Item4 from "./area5/Item4";
 
 const Area5 = () => {
   return (
-    <section className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl">
+    <section className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
       <div className="flex flex-col gap-7 py-7 px-4 md:flex-row md:flex-wrap md:justify-around md:py-20">
      <Item1/>
      <Item2/>
