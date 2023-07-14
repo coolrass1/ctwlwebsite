@@ -9,11 +9,11 @@ const Backbutton = ({setSlideindex}) => {
 
   return (
     <button
-     
-      className='border-2 text-sm p-1 ' 
+    className='border-2  p-2 bg-black/25 text-white text-lg hover:bg-green-900 z-50 ' 
+      // className='border-2 text-sm p-1 ' 
       //style={{ border: "1px solid gray", fontSize: "25px", padding: "15px" }}
-      onClick={() => {swiper.slidePrev()
-        console.log(swiper.activeIndex)
+      onClick={() => {swiper.isBeginning?swiper.slideTo(6,5):swiper.slidePrev()
+     
         setSlideindex(swiper.activeIndex)}}
     >
       <MdOutlineArrowBackIos />

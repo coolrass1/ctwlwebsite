@@ -42,12 +42,46 @@ export const gallery1 = [
 ];
 
 export const carsmain = [
-  { id: 1, title: "BMW 7 Series", imageSrc: "/images/cars/bmw7series/main.jpg" },
-  { id: 1, title: "BMW 5 Series", imageSrc: "/images/cars/bmw5series/main.jpeg" },
-  {id:1,title:'BMW 7i Series', imageSrc:'/images/cars/bmw7iseries/main.jpg'},
-  { id: 1, title: "mercedes e class", imageSrc: "/images/cars/mercedes_e_class/main.jpg" },
-  { id: 1, title: "mercedes s class", imageSrc: "/images/cars/mercedes_s_class/main.jpg" },
-  { id: 1, title: "mercedes  viano", imageSrc: "/images/cars/mercedesviano/main.jpg" },
-  { id: 1, title: "rolls roys", imageSrc: "/images/cars/rollsroys/main.jpg" },
+  {
+    id: 1,
+    title: "BMW 7 Series",
+    imageSrc: "/images/cars/bmw7series/main.jpg",
+  },
+  {
+    id: 2,
+    title: "BMW 5 Series",
+    imageSrc: "/images/cars/bmw5series/main.jpeg",
+  },
+  {
+    id: 3,
+    title: "BMW 7i Series",
+    imageSrc: "/images/cars/bmw7iseries/main.jpg",
+  },
+  {
+    id: 4,
+    title: "mercedes e class",
+    imageSrc: "/images/cars/mercedes_e_class/main.jpg",
+  },
+  {
+    id: 5,
+    title: "mercedes s class",
+    imageSrc: "/images/cars/mercedes_s_class/main.jpg",
+  },
+  {
+    id: 6,
+    title: "mercedes  viano",
+    imageSrc: "/images/cars/mercedesviano/main.jpg",
+  },
+  { id: 7, title: "rolls roys", imageSrc: "/images/cars/rollsroys/main.jpg" },
+];
 
+export const bmw7icars = [
+  { id: 1, imageSrc: "/images/cars/bmw7iseries/1.jpeg" },
+  { id: 2, imageSrc: "/images/cars/bmw7iseries/2.jpeg" },
+  { id: 3, imageSrc: "/images/cars/bmw7iseries/3.jpeg" },
+  {id:4, imageSrc:"/images/cars/bmw7iseries/4.jpeg"},
+  {id:5, imageSrc:"/images/cars/bmw7iseries/5.jpeg"},
+  {id:6, imageSrc:"/images/cars/bmw7iseries/6.jpeg"},
+  {id:7, imageSrc:"/images/cars/bmw7iseries/7.jpeg"},
+  // {id:8, imageSrc:"/images/cars/bmw7iseries/8.jpeg"},
 ];

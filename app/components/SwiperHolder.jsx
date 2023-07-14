@@ -61,7 +61,7 @@ const SwiperHolder = () => {
         <SwiperSlide>
           <CarsItem />
         </SwiperSlide> */}
-        {carsmain?.map(car=><SwiperSlide key={car}>
+        {carsmain?.map(car=><SwiperSlide key={car.id}>
           <CarsItem car={car} />
         </SwiperSlide>)}
 

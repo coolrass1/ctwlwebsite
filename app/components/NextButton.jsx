@@ -10,14 +10,15 @@ const NextButton = ({setSlideindex}) => {
 
   return (
     <button
-    className='border-2 text-sm p-1 ' 
+    className='border-2 z-50 p-2 bg-black/25 text-white text-lg hover:bg-green-900' 
     //   style={{
     //     border: "1px solid gray",
     //     fontSize: "25px",
     //     padding: "15px",
     //     marginRight: "-100px",
     //   }}
-      onClick={() =>{swiper.slideNext()
+      onClick={() =>{
+        swiper.isEnd?swiper.slideTo(0,10):swiper.slideNext()
         console.log("clicked index is"+swiper.clickedIndex)
         setSlideindex(swiper.activeIndex)
     } }
