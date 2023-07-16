@@ -24,7 +24,7 @@ const SwiperHolder = () => {
         //slidesPerView={4}
         autoplay
         speed={500}
-        pagination
+      
         breakpoints={{
           // when window width is >= 640px
           640: {

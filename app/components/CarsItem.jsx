@@ -4,7 +4,7 @@ import { FaCheck } from "react-icons/fa6";
 
 const CarsItem = ({car}) => {
   return (
-    <div className=" max-w-[320px] h-full py-7 gap-7 border-2 flex flex-col justify-start items-start pl-7  shadow-md  ">
+    <div className=" hover:scale-[110%] max-w-[320px] h-full py-7 gap-7 border-2 flex flex-col justify-start items-start pl-7  shadow-md  ">
       <div className="flex-1">
         <Image
           src={car?.imageSrc}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Autoplay,Navigation, Pagination, Scrollbar, A11y,EffectFade, EffectCube, EffectCreative} from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { bmw7icars } from "./Data";
@@ -19,16 +19,38 @@ const SwiperFleetItem = () => {
   return (
     <div className="w-screen mr-3 md:w-auto">
       <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Autoplay,Navigation,EffectFade, Pagination, Scrollbar,  EffectCube,A11y,EffectCreative]}
         // install Swiper modules
+        rewind={true}
+        // autoplay={true}
+        // speed={500}
+        centeredSlides={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         
-        spaceBetween={50}
-      
 
+        effect={'creative'}
+        creativeEffect={{
+          prev: {
+            shadow: true,
+            translate: [0, 0, -400],
+          },
+          next: {
+            translate: ['100%', 0, 0],
+          },
+        }}
+        
+        spaceBetween={0}
+        //effect={'fade'}
+
+        
         breakpoints={{
           // when window width is >= 640px
           640: {
             slidesPerView: 1,
+            autoplay:true
            
           },
           // when window width is >= 768px
