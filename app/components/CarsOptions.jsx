@@ -1,38 +1,37 @@
-import Image from "next/image";
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import Table from "./Table";
 import { FaArrowRight } from "react-icons/fa6";
-import SwiperFleetItem from "./SwiperFleetItem";
-import CarsOptions from "./CarsOptions";
 
-const Bmw7iItem = () => {
+const CarsOptions = () => {
+  const [showtable, setShowtable] = useState(true);
   return (
-    <div className="mx-6">
-      <div className="w-full py-7">
-        <Image
-          src="/images/cars/bmw7iseries/main.jpg"
-          alt="BMW7iSeries"
-          width={600}
-          height={600}
-          style={{ objectFit: "cover" }}
-        />
+    <>
+      {" "}
+      <div className=" -mt-6 flex gap-0">
+        <span
+          onClick={(e) => setShowtable(true)}
+          className={`border-2 p-2 cursor-pointer  ${!showtable?'':'border-t-4 border-t-green-900'}`}
+        >
+          specification
+        </span>
+        <span
+          onClick={(e) => setShowtable(false)}
+          className={`border-2 p-2 cursor-pointer ${showtable?'':'border-t-4 border-t-green-900'}`}
+        >
+          addtitional information
+        </span>
       </div>
-      <div className=" pt-7 flex flex-col gap-7">
-        <h1>Vehicle Overview</h1>
-        <div className="w-24 h-[3px] bg-green-900"></div>
-        <p className="">
-          Combining BMW’s world-renowned engineering with an unprecedented
-          commitment to comfort, the 7 Series has earned a reputation as the
-          luxury car of choice. The 7 Series BMW is a line of full-size luxury
-          cars perfect for your professional and personal travel itinerary.
-        </p>
-        <p>
-          Available with luxury leather interior and long wheel based options,
-          it means the passenger has ample leg room to sit back in space and be
-          chauffeur driven to their airport of choice.The BMW 7 Series come
-          equipped with the following complimentary features:
-        </p>
-      </div>
-      <div className="mt-12 ">
+      <div className="w-full h-auto">
+        {showtable ? (
+          <Table />
+        ) : (
+          <div className="border-2 px-4">
+            <h1 className="py-5  font-normal text-neutral-900">
+              The BMW 7i Series come equipped with the following complimentary
+              features:
+            </h1>
+            <div className="mt-2 ">
         <div className="flex items-center gap-1  py-2">
           <div className="flex justify-center items-center text-green-900">
             <FaArrowRight />
@@ -83,13 +82,11 @@ const Bmw7iItem = () => {
           </span>
         </div>
       </div>
-      <div className="px-2 mt-7">
-        <SwiperFleetItem />
-<CarsOptions/>
-   
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 
-export default Bmw7iItem;
+export default CarsOptions;
