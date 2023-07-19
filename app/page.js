@@ -20,14 +20,26 @@ const page = () => {
     <>
       <section className="relative min-h-[200px] md:h-screen ">
         <div
+       
           style={{
-            backgroundImage: "url(/images/hero.jpg)",
-            backgroundPosition: "center top",
-            backgroundSize: "100%",
+            backgroundImage: "url(/images/cars/mercedes_e_class/3.jpeg)",
+            backgroundPosition: "center -190px",
+            backgroundSize: "100vw",
             backgroundRepeat: "no-repeat",
           }}
-          className=" absolute -z-20 w-screen h-screen md:translate-y-[-50px] "
+          className=" hidden md:block absolute  -z-20 w-screen h-screen md:translate-y-[-50px] "
         ></div>
+         <div
+       
+       style={{
+         backgroundImage: "url(/images/cars/mercedes_e_class/3.jpeg)",
+         backgroundPosition: "center center",
+         backgroundSize:"100vw",
+         backgroundRepeat: "no-repeat",
+         height:"200px"
+       }}
+       className=" block z-50 min-w-screen min-h-full md:hidden mb-4"
+     ></div>
       </section>
       <Area1 ctp={area1}/>
       <Area2 />

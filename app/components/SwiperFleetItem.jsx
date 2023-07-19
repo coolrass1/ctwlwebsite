@@ -14,7 +14,7 @@ import Image from "next/image";
 import Backbutton from "./Backbutton";
 import NextButton from "./NextButton";
 
-const SwiperFleetItem = () => {
+const SwiperFleetItem = ({listcars}) => {
   const [slideindex, setSlideindex] = useState(0);
   return (
     <div className="w-screen mr-3 md:w-auto">
@@ -63,7 +63,7 @@ const SwiperFleetItem = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        {bmw7icars?.map((car, index) => (
+        {listcars?.map((car, index) => (
     
             <SwiperSlide key={index}>
               <Image

@@ -85,3 +85,26 @@ export const bmw7icars = [
   {id:7, imageSrc:"/images/cars/bmw7iseries/7.jpeg"},
   // {id:8, imageSrc:"/images/cars/bmw7iseries/8.jpeg"},
 ];
+export const bmw7cars = [
+  { id: 1, imageSrc: "/images/cars/bmw7series/1.jpeg" },
+  { id: 2, imageSrc: "/images/cars/bmw7series/2.jpeg" },
+  { id: 3, imageSrc: "/images/cars/bmw7series/3.jpeg" },
+  {id:4, imageSrc:"/images/cars/bmw7series/4.jpeg"},
+
+  {id:6, imageSrc:"/images/cars/bmw7series/6.jpeg"},
+  {id:7, imageSrc:"/images/cars/bmw7series/7.jpeg"},
+   {id:8, imageSrc:"/images/cars/bmw7series/8.jpeg"},
+   {id:8, imageSrc:"/images/cars/bmw7series/main.jpeg"},
+];
+export const mercedesEseries = [
+  { id: 1, imageSrc: "/images/cars/mercedes_e_class/1.jpeg" },
+  { id: 2, imageSrc: "/images/cars/mercedes_e_class/2.jpeg" },
+  { id: 3, imageSrc: "/images/cars/mercedes_e_class/3.jpeg" },
+  {id:4, imageSrc:"/images/cars/mercedes_e_class/4.jpeg"},
+  {id:5, imageSrc:"/images/cars/mercedes_e_class/5.jpeg"},
+
+  {id:6, imageSrc:"/images/cars/mercedes_e_class/6.jpeg"},
+  {id:6, imageSrc:"/images/cars/mercedes_e_class/main.jpg"},
+  
+  
+];

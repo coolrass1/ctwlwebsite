@@ -3,6 +3,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import SwiperFleetItem from "./SwiperFleetItem";
 import CarsOptions from "./CarsOptions";
+import {bmw7icars} from './Data'
 
 const Bmw7iItem = () => {
   return (
@@ -84,7 +85,7 @@ const Bmw7iItem = () => {
         </div>
       </div>
       <div className="px-2 mt-7">
-        <SwiperFleetItem />
+        <SwiperFleetItem listcars={bmw7icars}/>
 <CarsOptions/>
    
       </div>

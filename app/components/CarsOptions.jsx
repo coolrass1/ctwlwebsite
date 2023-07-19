@@ -8,7 +8,7 @@ const CarsOptions = () => {
   return (
     <>
       {" "}
-      <div className=" -mt-6 flex gap-0">
+      <div className=" -mt-5 flex gap-0">
         <span
           onClick={(e) => setShowtable(true)}
           className={`border-2 p-2 cursor-pointer  ${!showtable?'':'border-t-4 border-t-green-900'}`}
