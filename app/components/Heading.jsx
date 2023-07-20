@@ -122,10 +122,10 @@ const Heading = () => {
                   <Link href="/fleet/BMW5series">BMW 5 Series </Link>
                 </li>
                 <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-                  <Link href="/">Mercedes Viano </Link>
+                  <Link href="/fleet/MercedesViano">Mercedes Viano </Link>
                 </li>
                 <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-                  <Link href="/">Rolls Royce Phantom </Link>
+                  <Link href="/fleet/Rolls-Roye-Phantom">Rolls Royce Phantom </Link>
                 </li>
                 <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
                   <Link href="/">Coaches </Link>

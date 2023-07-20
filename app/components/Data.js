@@ -45,7 +45,7 @@ export const carsmain = [
   {
     id: 1,
     title: "BMW 7 Series",
-    imageSrc: "/images/cars/bmw7series/main.jpg",
+    imageSrc: "/images/cars/bmw7series/main.jpeg",
   },
   {
     id: 2,
@@ -132,4 +132,27 @@ export const bmw5cars = [
   {id:5, imageSrc:"/images/cars/bmw5series/5.jpeg"},
 
    {id:6, imageSrc:"/images/cars/bmw5series/main.jpeg"},
+];
+
+export const mercedesviano = [
+  { id: 1, imageSrc: "/images/cars/mercedesviano/1.jpeg" },
+  { id: 2, imageSrc: "/images/cars/mercedesviano/2.jpeg" },
+  { id: 3, imageSrc: "/images/cars/mercedesviano/3.jpeg" },
+  {id:4, imageSrc:"/images/cars/mercedesviano/4.jpeg"},
+
+  {id:5, imageSrc:"/images/cars/mercedesviano/5.jpeg"},
+
+   {id:6, imageSrc:"/images/cars/mercedesviano/main.jpg"},
+];
+
+export const rollsroyces = [
+  { id: 1, imageSrc: "/images/cars/rollsroys/1.jpeg" },
+  { id: 2, imageSrc: "/images/cars/rollsroys/2.jpeg" },
+  { id: 3, imageSrc: "/images/cars/rollsroys/3.jpeg" },
+  {id:4, imageSrc:"/images/cars/rollsroys/4.jpeg"},
+
+  {id:5, imageSrc:"/images/cars/rollsroys/5.jpeg"},
+  {id:6, imageSrc:"/images/cars/rollsroys/6.jpeg"},
+
+   {id:7, imageSrc:"/images/cars/rollsroys/main.jpg"},
 ];
