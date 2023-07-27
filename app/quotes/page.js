@@ -1,7 +1,10 @@
+
 import React from "react";
 import HeroAbout from "../components/HeroAbout";
+import BookingForm from "./BookingForm";
 
 const page = () => {
+ 
   return (
     <section>
       <HeroAbout title="Quote Request" />
@@ -28,15 +31,17 @@ const page = () => {
           </p>
         </div>
         <div>
-          <form>
+          <BookingForm/>
+          {/* <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                for="username"
+                htmlFor="username"
               >
                 Your Name
               </label>
               <input
+              {...register("name", { required: true })}
                 className="shadow appearance-none border rounded 
                           w-full py-2 px-3 text-gray-700
                          leading-tight focus:outline-none 
@@ -49,11 +54,12 @@ const page = () => {
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                for="username"
+                htmlFor="username"
               >
                 Your Email
               </label>
               <input
+               {...register("email", { required: true })}
                 className="shadow appearance-none border rounded 
                           w-full py-2 px-3 text-gray-700
                          leading-tight focus:outline-none 
@@ -66,11 +72,12 @@ const page = () => {
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                for="username"
+                htmlFor="username"
               >
                 Contact Number
               </label>
               <input
+              {...register("contactNumber", { required: true })}
                 className="shadow appearance-none border rounded 
                           w-full py-2 px-3 text-gray-700
                          leading-tight focus:outline-none 
@@ -81,13 +88,15 @@ const page = () => {
               />
             </div>
             <div className="mb-4">
+          
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                for="username"
+                htmlFor="username"
               >
                 Pick up From
               </label>
               <input
+                {...register("pickup", { required: true })}
                 className="shadow appearance-none border rounded 
                           w-full py-2 px-3 text-gray-700
                          leading-tight focus:outline-none 
@@ -100,11 +109,12 @@ const page = () => {
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                for="username"
+                htmlFor="username"
               >
                 Destination
               </label>
               <input
+              {...register("destination", { required: true })}
                 className="shadow appearance-none border rounded 
                           w-full py-2 px-3 text-gray-700
                          leading-tight focus:outline-none 
@@ -123,14 +133,15 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                 
+                  
                     type="checkbox"
+                      {...register("concierge")}
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Concierge service
                   </label>
                 </div>
@@ -138,14 +149,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                     {...register("childseat")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Child seat
                   </label>
                 </div>
@@ -153,14 +163,14 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                    
                     type="checkbox"
+                      {...register("serviceapartement")}
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Serviced apartment
                   </label>
                 </div>
@@ -168,14 +178,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                     {...register("hotelreservation")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Hotel reservation
                   </label>
                 </div>
@@ -183,14 +192,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                   {...register("restaurantreservation")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Restaurant reservation
                   </label>
                 </div>
@@ -198,14 +206,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                    {...register("tour")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Tours & sightseeing
                   </label>
                 </div>
@@ -213,14 +220,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                    {...register("golfcoaching")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Book golf coaching
                   </label>
                 </div>
@@ -228,14 +234,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                    {...register("book_personal_trainer")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Book Personal Trainer
                   </label>
                 </div>
@@ -243,14 +248,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                      {...register("English_language_translator")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     English language translator
                   </label>
                 </div>
@@ -258,14 +262,13 @@ const page = () => {
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input
-                    id="offers"
-                    name="offers"
+                    {...register("Additional_security")}
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
-                <div class="text-sm leading-6">
-                  <label for="offers" className="font-medium text-gray-900">
+                <div className="text-sm leading-6">
+                  <label htmlFor="offers" className="font-medium text-gray-900">
                     Additional security
                   </label>
                 </div>
@@ -274,17 +277,16 @@ const page = () => {
             <fieldset>
               <div className="col-span-full">
                 <label
-                  for="about"
+                  htmlFor="about"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
                   Your Request
                 </label>
                 <div className="mt-2">
                   <textarea
-                    id="about"
-                    name="about"
+                    {...register("Your_Request")}
                     rows="3"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
                   ></textarea>
                 </div>
               </div>
@@ -297,14 +299,14 @@ const page = () => {
              
                 <div className="flex h-6 items-center">
                   <input
-                    id="comments"
-                    name="comments"
+                 required
+                 {...register("term_valid")}
                     type="checkbox"
-                    class="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
+                    className="h-4 w-4 rounded border-gray-300 text-green-900 focus:ring-green-900"
                   />
                 </div>
                 <div className="text-sm leading-6">
-                  <label for="comments" className="font-medium text-gray-900">
+                  <label htmlFor="comments" className="font-medium text-gray-900">
                     I consent to being contacted by email or phone by Citywide
                     London
                   </label>
@@ -312,7 +314,7 @@ const page = () => {
               </div>
             </fieldset>
             <button className=" text-white bg-green-900 px-24 py-3 rounded-md hover:bg-green-700 shadow-sm" type="submit"> SEND</button>
-          </form>
+          </form> */}
         </div>
       </main>
     </section>
