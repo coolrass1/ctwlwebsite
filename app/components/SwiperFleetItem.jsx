@@ -31,16 +31,16 @@ const SwiperFleetItem = ({listcars}) => {
         }}
         
 
-        effect={'creative'}
-        creativeEffect={{
-          prev: {
-            shadow: true,
-            translate: [0, 0, -400],
-          },
-          next: {
-            translate: ['100%', 0, 0],
-          },
-        }}
+        // effect={'creative'}
+        // creativeEffect={{
+        //   prev: {
+        //     shadow: true,
+        //     translate: [0, 0, -400],
+        //   },
+        //   next: {
+        //     translate: ['100%', 0, 0],
+        //   },
+        // }}
         
         spaceBetween={0}
         //effect={'fade'}
@@ -72,7 +72,8 @@ const SwiperFleetItem = ({listcars}) => {
                 alt='BMW7iSeries'
                 width={700}
                 height={600}
-                className=" cursor-pointer w-[350]  object-cover h-[210px] md:object-cover md:h-[420px] md:w-[720px]"
+                priority
+                className=" cursor-pointer w-full  object-cover h-auto  md:object-cover md:h-[420px] md:w-[720px]"
                 // style={{ objectFit: "cover" , width:"100%" , height:"100%"}}
               />
               {/* <img

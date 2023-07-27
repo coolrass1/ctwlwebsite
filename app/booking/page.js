@@ -1,8 +1,9 @@
 import React from 'react'
+import HeroAbout from '../components/HeroAbout'
 
 const page = () => {
   return (
-    <div>booking page</div>
+ <section><HeroAbout title="Booking" /></section>
   )
 }
 
