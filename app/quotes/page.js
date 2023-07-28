@@ -1,7 +1,7 @@
 
 import React from "react";
 import HeroAbout from "../components/HeroAbout";
-import BookingForm from "./BookingForm";
+import BookingForm from "../components/BookingForm";
 
 const page = () => {
  
