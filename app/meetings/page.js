@@ -44,6 +44,7 @@ const page = () => {
               height={500}
               src={"/images/city-of-london.jpeg"}
               style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              alt="city"
             />
           </div>
         </div>

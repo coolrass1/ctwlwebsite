@@ -79,19 +79,19 @@ const Mobilemenu = () => {
               <Link href="/fleet/BMW-7-Series">BMW 7 Series </Link>
             </li>
             <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-              <Link href="/">Mercedes S Class </Link>
+              <Link href="/fleet/Mercedes-s-class">Mercedes S Class </Link>
             </li>
             <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-              <Link href="/">Mercedes E Class </Link>
+              <Link href="/fleet/Mercedes-e-class">Mercedes E Class </Link>
             </li>
             <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
-              <Link href="/">BMW 5 Series </Link>
+              <Link href="/fleet/BMW5series">BMW 5 Series </Link>
             </li>
             <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-              <Link href="/">Mercedes Viano </Link>
+              <Link href="/fleet/MercedesViano">Mercedes Viano </Link>
             </li>
             <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-              <Link href="/">Rolls Royce Phantom </Link>
+              <Link href="/fleet/Rolls-Roye-Phantom">Rolls Royce Phantom </Link>
             </li>
             <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
               <Link href="/">Coaches </Link>
@@ -100,25 +100,25 @@ const Mobilemenu = () => {
           {/* floation */}
         </li>
         <li className="  w-full px-2  py-2 hover:bg-green-600">
-          <Link href="#">Quotes request</Link>
+          <Link href="/quotes">Quotes request</Link>
         </li>
         <li className=" w-full px-2  py-2 hover:bg-green-600">
-          <Link href="#">Weddings</Link>
+          <Link href="/weddings">Weddings</Link>
         </li>
         <li className=" w-full px-2  py-2 hover:bg-green-600">
-          <Link href="#">Meetings & Events</Link>
+          <Link href="/meetings">Meetings & Events</Link>
         </li>
         <li className=" w-full px-2  py-2 hover:bg-green-600">
-          <Link href="#">Airport transfer</Link>
+          <Link href="/airport">Airport transfer</Link>
         </li>
         <li className="  w-full px-2  py-2 hover:bg-green-600">
-          <Link href="#">Concierge</Link>
+          <Link href="/concierge">Concierge</Link>
         </li>
         <li className=" w-full px-2  py-2 hover:bg-green-600">
           <Link href="#">Contact</Link>
         </li>
         <li className=" w-full  px-2 hover:bg-green-600">
-          <Link href="#">Booking</Link>
+          <Link href="/booking">Booking</Link>
         </li>
       </ul>
     </div>

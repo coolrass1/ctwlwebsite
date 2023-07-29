@@ -1,8 +1,9 @@
 import React from 'react'
+import HeroAbout from '../components/HeroAbout'
 
 const page = () => {
   return (
-    <div>concierge page</div>
+<section><HeroAbout title="Concierge services" /></section>
   )
 }
 
