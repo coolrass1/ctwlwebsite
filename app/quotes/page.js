@@ -2,6 +2,7 @@
 import React from "react";
 import HeroAbout from "../components/HeroAbout";
 import BookingForm from "../components/BookingForm";
+import QuoteForm from "../components/QuoteForm";
 
 const page = () => {
  
@@ -31,7 +32,7 @@ const page = () => {
           </p>
         </div>
         <div>
-          <BookingForm/>
+          <QuoteForm/>
           {/* <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label
