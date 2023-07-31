@@ -9,7 +9,7 @@ const page = () => {
     <section>
       <HeroAbout title="Booking" />
       <main className=" pt-7 grid grid-cols-1  px-7 md:grid-cols-2 gap-3 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
-      <div>
+      <div className="order-2 md:order-1">
         <div>
           <Image
            
@@ -82,7 +82,7 @@ const page = () => {
           corporate events and exhibitions.
         </p>
       </div>
-      <div className="md:px-7"><BookingForm2/></div>
+      <div className="order-1 md:order-2 md:px-7"><BookingForm2/></div>
 
 
 
