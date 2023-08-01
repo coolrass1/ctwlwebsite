@@ -17,7 +17,7 @@ export async function POST(request) {
    const {name, email, business,phone, pickupaddress,destination,Your_Request,message}=re
    
    const dtr=`<div>client name </div><h1 style="color:red"> ${name }<h1/>
-              <h1> bussiness ${business}<h1/>
+              <h1> bussiness: ${business}<h1/>
               <h1> Phone number: ${phone} <h1/>
               <h1> Depart from: ${pickupaddress} <h1/>
               <h1> Destination: ${destination} <h1/>
