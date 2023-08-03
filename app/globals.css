@@ -1,4 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* class="react-datepicker__input-container react-datepicker__view-calendar-icon" */
 
+.react-datepicker__calendar-icon{
+    font-size: 2em;
+    fill: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.react-datepicker-ignore-onclickoutside{
+    padding-left: 5px;
+}

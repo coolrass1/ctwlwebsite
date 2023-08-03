@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 
-import Testimonial from "./Testimonial";
+
 import SwiperTestimonial from "./SwiperTestimonial";
 import GalleryItem from "./GalleryItem";
 import { gallery } from "./Data";

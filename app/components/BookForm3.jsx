@@ -1,26 +1,39 @@
 "use client";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Thankyou from "./Thankyou";
 import { FaSpinner } from "react-icons/fa6";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import PhoneInput from "react-phone-input-2";
+import ReactPhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import MyDatePicker from "./MyDatePicker";
+import { FaCalendarAlt } from "react-icons/fa";
 
-const BookingForm2 = () => {
+const BookForm3 = () => {
   const [thankyou, setThankyou] = useState(false);
   const [btnloading, setbtnloading] = useState(false);
+  const [startDate, setStartDate] = useState(Date.now);
   const router = useRouter();
   const {
     register,
     handleSubmit,
     watch,
     reset,
+    control,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {console.log(data);getdata(data)};
+  const onSubmit = (data) => {
+
+    getdata(data);
+    reset();
+  };
   const getdata = async (data) => {
     // Send the data to the server in JSON format.
     const JSONdata = JSON.stringify(data);
-    setbtnloading(true)
+    setbtnloading(true);
 
     // API endpoint where we send form data.
     const endpoint = "/api/nodemailer";
@@ -44,10 +57,11 @@ const BookingForm2 = () => {
     // If server returns the name submitted, that means the form works.
     const result = await response.json();
     const results = result.success;
- results && setThankyou(true)
+    results && setThankyou(true);
     //results && router.push("/thankyou");
     reset();
   };
+
   const Formi = function () {
     return (
       <>
@@ -66,9 +80,9 @@ const BookingForm2 = () => {
               <input
                 {...register("name", { required: true })}
                 className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
+            w-full py-2 px-3 text-gray-700
+           leading-tight focus:outline-none 
+           focus:shadow-outline"
                 required
                 type="text"
                 placeholder="Please enter your name"
@@ -81,38 +95,75 @@ const BookingForm2 = () => {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="username"
               >
-                Business or referal name
+                Date{" "}
+                {errors.date && (
+                  <span className="text-red-500">{"date is required"}</span>
+                )}
               </label>
-              <input
-                {...register("business", { required: false })}
-                className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
-                type="text"
-                placeholder="Business or referal name"
+              {/* < DatePicker 
+                className="py-2 shadow-sm"
+                 selected={startDate} 
+                 onChange={(date) => setStartDate(date)}
+                 showTimeSelect
+                 dateFormat="Pp" /> */}
+              <Controller
+                control={control}
+                name="dateofbooking"
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <DatePicker
+                    //showIcon
+                    className="py-2"
+                    placeholderText="Click to select a date" 
+                    onChange={(date) => field.onChange(date)}
+                    selected={field.value}
+                    showTimeSelect
+                    dateFormat="Pp"
+                    isClearable
+                    minDate={startDate}
+                    withPortal
+                  />
+                  // <MyDatePicker
+
+                  // />
+                )}
               />
             </div>
           </fieldset>
           <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="mb-4">
+            <div className="mb-4 max-w-[80px]">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="username"
               >
                 Phone <span className="text-red-600">*</span>
+                {errors.phone && (
+                  <span className="text-red-500 ml-2">
+                    {"phone number is required"}
+                  </span>
+                )}
               </label>
-              <input
-                {...register("phone", { required: true })}
-                className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
-                required
-                type="text"
-                placeholder="Enter Phone number"
+
+              <Controller
+                control={control}
+                name="phone"
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <PhoneInput
+                    containerStyle={{ width: "20px" }}
+                    country={"gb"}
+                    //value={this.state.phone}
+                    //onChange={phone => this.setState({ phone })}
+                    placeholderText="Select date"
+                    onChange={(phone) => field.onChange(phone)}
+                    selected={field.value}
+                  />
+                )}
               />
             </div>
+            {/* hshs */}
+          </fieldset>
+          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -123,13 +174,32 @@ const BookingForm2 = () => {
               <input
                 {...register("email", { required: true })}
                 className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
+            w-full py-2 px-3 text-gray-700
+           leading-tight focus:outline-none 
+           focus:shadow-outline"
                 required
                 type="email"
                 placeholder="Please enter your email"
               />
+            </div>
+            <div>
+              <label
+                htmlFor="countries"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Select a Brand
+              </label>
+              <select
+                id="countries"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {...register("cartype")}
+              >
+                <option selected>Any Brand</option>
+                <option value="US">BMWi7</option>
+                <option value="CA">Mercedes</option>
+                <option value="FR">Audi</option>
+                <option value="DE">BMW</option>
+              </select>
             </div>
           </fieldset>
           <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -185,13 +255,17 @@ const BookingForm2 = () => {
           <button
             type="submit"
             className="w-full mt-7 bg-green-900   disabled:bg-black flex justify-center items-center gap-3  py-7 text-white shadow-sm rounded-md hover:bg-green-700"
-         disabled= {btnloading?true:false}
-        
+            disabled={btnloading ? true : false}
           >
-            {btnloading?<>< FaSpinner className="text-center animate-spin text-yellow-300"/> Processing</>:"SEND"}
+            {btnloading ? (
+              <>
+                <FaSpinner className="text-center animate-spin text-yellow-300" />{" "}
+                Processing
+              </>
+            ) : (
+              "SEND"
+            )}
           </button>
-   
-          
         </form>
       </>
     );
@@ -199,4 +273,4 @@ const BookingForm2 = () => {
   return thankyou ? <Thankyou /> : <Formi />;
 };
 
-export default BookingForm2;
+export default BookForm3;

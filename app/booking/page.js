@@ -3,6 +3,7 @@ import HeroAbout from "../components/HeroAbout";
 import Image from "next/image";
 import BookingForm from "../components/BookingForm";
 import BookingForm2 from "../components/BookingForm2";
+import BookForm3 from "../components/BookForm3";
 
 const page = () => {
   return (
@@ -82,7 +83,7 @@ const page = () => {
           corporate events and exhibitions.
         </p>
       </div>
-      <div className="order-1 md:order-2 md:px-7"><BookingForm2/></div>
+      <div className="order-1 md:order-2 md:px-7"><BookForm3/></div>
 
 
 

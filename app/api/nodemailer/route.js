@@ -1,31 +1,44 @@
-import { sendMail } from '@/app/service/service'
-import { NextResponse } from 'next/server'
+import { sendMail } from "@/app/service/service";
+import { NextResponse } from "next/server";
+const { isValid, format } = require("date-fns");
 
 export async function GET(request) {
-    console.log(request.url)
-    return NextResponse.json({ra:true})
+  console.log(request.url);
+  return NextResponse.json({ ra: true });
 }
 
 export async function POST(request) {
-      //const {title, author, email}=await request.json()
-   // console.log(await request.json())
-   const re= await request.json()
-   console.log(re.name)
-   const emailer= process.env.USERMAIL
-   console.log(JSON.stringify(re))
-   const subject="Booking"
-   const {name, email, business,phone, pickupaddress,destination,Your_Request,message}=re
-   
-   const dtr=`<div>client name </div><h1 style="color:red"> ${name }<h1/>
-              <h1> bussiness: ${business}<h1/>
-              <h1> Phone number: ${phone} <h1/>
-              <h1> Depart from: ${pickupaddress} <h1/>
-              <h1> Destination: ${destination} <h1/>
-              <p> ${Your_Request} </p>
+  const re = await request.json();
+
+  const emailer = process.env.USERMAIL;
+
+  const subject = "Booking";
+  const {
+    dateofbooking,
+    name,
+    cartype,
+    email,
+    phone,
+    pickupaddress,
+    destination,
+    omessage,
+  } = re;
+
+  const dtr = `<div>client name:  ${name}  </div>
+              <div> Email: ${email}<div/>
+              <div> Phone number: ${phone} <div/>
+              <div> Date: ${format(
+                new Date(dateofbooking),
+                "dd/MM/yyyy HH:mm:ss"
+              )} <div/>
+              <div> Depart from: ${pickupaddress} <div/>
+              <div> Destination: ${destination} <div/>
+              <p> Request: ${omessage} </p>
+              <p>Cartype: ${cartype}</p>
               
-              `
- await sendMail(email, emailer,subject,dtr)
-     
-    
-    return NextResponse.json({success:true})
+              `;
+
+  await sendMail(email, emailer, subject, dtr);
+
+  return NextResponse.json({ success: true });
 }

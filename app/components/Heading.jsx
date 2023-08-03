@@ -104,7 +104,7 @@ const Heading = () => {
                 className={` fixed opacity-0 z-[-99] text-black top-[230px]   flex flex-col gap-2 bg-neutral-100 shadow-slate-900 shadow-2xl py-2`}
               >
                 <li className=" hover:bg-green-500  py-2 pl-2 pr-28">
-                  <Link href="/fleet/BMW-7i-Series">BMW 7i Series </Link>
+                  <Link href="/fleet/BMW-7i-Series">BMW i7 Series </Link>
                 </li>
                 <li className=" hover:bg-green-500 py-2 pl-2 pr-28">
                   <Link href="/fleet/BMW-7-Series">BMW 7 Series </Link>

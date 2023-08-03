@@ -11,7 +11,7 @@ const MercedesSitem = () => {
       <div className="w-full py-7">
         <Image
           src="/images/cars/mercedes_s_class/main.jpg"
-          alt="BMW7iSeries"
+          alt="BMWi7Series"
           width={600}
           height={600}
           style={{ objectFit: "cover" }}
