@@ -2,11 +2,14 @@ import Image from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import HerAboutpic from "../components/HerAboutpic";
+import Bogbutton from "../components/Bogbutton";
 
 const page = () => {
   return (
     <div>
       <HerAboutpic title='url("/images/westminster-abby.jpg")' />
+      <section className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
+
       <main
         className="pt-11 px-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl
    grid grid-cols-1 gap-3 md:grid-cols-2
@@ -48,7 +51,7 @@ const page = () => {
             />
           </div>
         </div>
-        <div className="pt-7">
+        {/* <div className="pt-7">
           <div className="flex ">
             <div className="bg-black text-white flex-1 py-11 ">
               <h5 className="text-center text-xl md:text-start md:ml-3">
@@ -59,8 +62,8 @@ const page = () => {
               <h5 className="text-4xl">{`>`}</h5>
             </div>
           </div>
-        </div>
-        <div className="pt-7">
+        </div> */}
+        {/* <div className="pt-7">
           <div className="flex ">
             <div className="bg-black text-white flex-1 py-11  ">
               <h5 className="text-center text-xl md:text-start md:ml-3">
@@ -71,8 +74,12 @@ const page = () => {
               <h5 className="text-4xl">{`>`}</h5>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
+      <div className="mt-7 mx-7 flex flex-col md:flex-row  gap-3"> 
+      <Bogbutton title=" Our Services" url="/about"/>
+        <Bogbutton title=" Request a Quote Now" url="/quotes"/></div>
+                </section>
     </div>
   );
 };

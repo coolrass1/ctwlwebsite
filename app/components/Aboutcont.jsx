@@ -10,6 +10,7 @@ import Area1 from "../components/Area1";
 import { area, area1, area9 } from "../components/Data";
 import Modal from "../components/Modal";
 import { FaPlay } from "react-icons/fa6";
+import Bogbutton from "./Bogbutton";
 const Aboutcont = () => {
     const [showModal, setShowModal] = useState(false);
   const [isOpen, setIsopen] = useState(false);
@@ -64,26 +65,10 @@ const Aboutcont = () => {
       </div>
     </main>
     <main className="flex flex-col gap-7 mt-7 py-14 md:flex-row  md:justify-center md:items-center container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl">
-      <div className="flex md:flex-1">
-        <div className="bg-black text-white flex-1 py-14  ">
-          <h5 className="text-center text-2xl md:text-start md:ml-3">
-            Request a Quote Now
-          </h5>
-        </div>
-        <div className=" text-white bg-green-900 flex justify-center items-center px-5">
-          <h5 className="text-4xl">{`>`}</h5>
-        </div>
-      </div>
-      <div className="flex md:flex-1">
-        <div className="bg-black text-white flex-1 py-14 ">
-          <h5 className="text-center text-2xl md:text-start md:ml-3">
-            Learn More About Our Services
-          </h5>
-        </div>
-        <div className=" text-white bg-green-900 flex justify-center items-center px-5">
-          <h5 className="text-4xl">{`>`}</h5>
-        </div>
-      </div>
+    
+      <Bogbutton title="     Request a Quote Now" url="/quotes"/>
+      
+      <Bogbutton title=" Learn More About Our Services" url="/about"/>
     </main>
     <main className="grid grid-cols-1 md:grid-cols-2 md:py-14 md:gap-14 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-2xl">
       <div className="">
