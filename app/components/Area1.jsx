@@ -4,6 +4,7 @@ import ButtonComponent from "./ButtonComponent";
 import {FaPlay} from 'react-icons/fa6'
 import Modal from "./Modal";
 
+
 const Area1 = ({ctp}) => {
   const [showModal, setShowModal]=useState(false)
   return (
@@ -20,7 +21,8 @@ const Area1 = ({ctp}) => {
           can rely on us, as you need a transportation service you can rely on. */}
         {ctp?.content}
         </p>
-        <ButtonComponent title={ctp?.btncontent} />
+        <ButtonComponent title={ctp?.btncontent} url={ctp?.btnurl} />
+         
       </article>
       <article
         className="hidden md:flex  md:flex-1 h-[420px] justify-center items-center"

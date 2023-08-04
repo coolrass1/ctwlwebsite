@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonComponent from "./ButtonComponent";
+import Btn from "./Btn";
 
 const Area6 = () => {
   return (
@@ -11,7 +12,8 @@ const Area6 = () => {
         <h1 className=" text-center leading-10 md:leading-[50px]  text-xl md:text-3xl md:max-w-[700px]">Request for a quote today and choose the car your need</h1>
         <div className="w-28 h-[3px] bg-green-900 mb-7"></div>
         <p className="text-center leading-7">Call Us On +44 (0) 20 7474 4828 or Email info@citywidelondon.co.uk</p>
-        <ButtonComponent title={'get a quote'} />
+         <ButtonComponent title={'get a quote'} url="/quotes" /> 
+        
       </article>
     </section>
   );

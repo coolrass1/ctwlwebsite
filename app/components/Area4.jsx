@@ -1,5 +1,6 @@
 import React from "react";
 import Buttonquote from "./Buttonquote";
+import Btn from "./Btn";
 
 const Area4 = () => {
   return (
@@ -15,7 +16,8 @@ const Area4 = () => {
         <p className="py-5 text-base text-center  md:text-xl">
           Citywide London has pricing options to meet all of your needs
         </p>
-        <Buttonquote />
+        <Buttonquote url="/quotes" />
+        
       </blockquote>
     </section>
   );
