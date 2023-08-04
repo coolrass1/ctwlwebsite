@@ -1,9 +1,11 @@
+'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Logo = () => {
   return (
-    <div>
+    <Link href={'/'}>
     <Image
       src="/images/logo.png"
       width={300}
@@ -14,7 +16,7 @@ const Logo = () => {
       // quality={70}
       // alt="logo "
     />
-  </div>
+  </Link>
   )
 }
 

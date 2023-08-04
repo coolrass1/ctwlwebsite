@@ -99,25 +99,46 @@ const Mobilemenu = () => {
           </ul>
           {/* floation */}
         </li>
-        <li className="  w-full px-2  py-2 hover:bg-green-600">
+        <li onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className="  w-full px-2  py-2 hover:bg-green-600">
           <Link href="/quotes">Quotes request</Link>
         </li>
-        <li className=" w-full px-2  py-2 hover:bg-green-600">
+        <li onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className=" w-full px-2  py-2 hover:bg-green-600">
           <Link href="/weddings">Weddings</Link>
         </li>
-        <li className=" w-full px-2  py-2 hover:bg-green-600">
+        <li onClick={(e) => {
+                
+                setOpenNav(false);
+              }}  className=" w-full px-2  py-2 hover:bg-green-600">
           <Link href="/meetings">Meetings & Events</Link>
         </li>
-        <li className=" w-full px-2  py-2 hover:bg-green-600">
+        <li onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className=" w-full px-2  py-2 hover:bg-green-600">
           <Link href="/airport">Airport transfer</Link>
         </li>
-        <li className="  w-full px-2  py-2 hover:bg-green-600">
+        <li onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className="  w-full px-2  py-2 hover:bg-green-600">
           <Link href="/concierge">Concierge</Link>
         </li>
-        <li className=" w-full px-2  py-2 hover:bg-green-600">
-          <Link href="#">Contact</Link>
+        <li onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className=" w-full px-2  py-2 hover:bg-green-600">
+          <Link href="/contact">Contact</Link>
         </li>
-        <li className=" w-full  px-2 hover:bg-green-600">
+        <li   onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className=" w-full  px-2 hover:bg-green-600">
           <Link href="/booking">Booking</Link>
         </li>
       </ul>

@@ -195,10 +195,13 @@ const BookForm3 = () => {
                 {...register("cartype")}
               >
                 <option selected>Any Brand</option>
-                <option value="US">BMWi7</option>
-                <option value="CA">Mercedes</option>
-                <option value="FR">Audi</option>
-                <option value="DE">BMW</option>
+                <option value="Mercedes Class S">Mercedes class S</option>
+                <option value="BMWi7">BMWi7</option>
+                <option value="Mercedes Class E">Mercedes class E</option>
+                <option value="BMW5">BMW5</option>
+                <option value="Mercedes Viano">Mercedes Viano</option>
+                <option value="Rolls Fantom">Roll Royce Phatom</option>
+                <option value="BMW7">BMW7</option>
               </select>
             </div>
           </fieldset>

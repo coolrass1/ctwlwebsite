@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiCheckboxChecked } from "react-icons/bi";
 import { TbMathGreater } from "react-icons/tb";
 import { FaSearch } from "react-icons/fa";
@@ -11,8 +11,19 @@ import Logo from "./Logo";
 import Mobilemenu from "./Mobilemenu";
 import FleetHeader from "./FleetHeader";
 import Btn from "./Btn";
+import { useRouter, useParams,usePathname } from "next/navigation";
 
 const Heading = () => {
+const [patths , setPatths]=useState('/')
+  const router=useRouter()
+  const params=useParams()
+  const pat=usePathname()
+ 
+ useEffect(()=>{
+setPatths(pat)
+ },[pat])
+ console.log(patths.substring(0,6)=='/fleet')
+  
   return (
     <section>
       <div className="  hidden md:flex flex-col  gap-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl  ">
@@ -75,13 +86,13 @@ const Heading = () => {
         </div>
         <nav className="hidden md:flex justify-between items-center bg-black text-white">
           <ul className="flex justify-between items-center gap-3">
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/">Home</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/about'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/about">About us</Link>
             </li>
-            <li className=" relative py-7  hover:bg-green-600 [&>*:nth-child(2)]:hover:z-50 [&>*:nth-child(2)]:hover:opacity-100">
+            <li className={` ${patths.substring(0,6)=='/fleet'?'bg-green-900':''} relative py-7  hover:bg-green-600 [&>*:nth-child(2)]:hover:z-50 [&>*:nth-child(2)]:hover:opacity-100`}>
               <Link
                 href="/fleet"
                 className="flex gap-1 justify-center items-center"
@@ -123,25 +134,25 @@ const Heading = () => {
               </ul>
               {/* floation */}
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/quotes'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/quotes">Quotes request</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/weddings'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/weddings">Weddings</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/meetings'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/meetings">Meetings & Events</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/airport'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/airport">Airport transfer</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/concierge'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/concierge">Concierge</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/contact'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/contact">Contact</Link>
             </li>
-            <li className=" py-7 px-2 hover:bg-green-600">
+            <li className={` ${patths=='/booking'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/booking">Booking</Link>
             </li>
           </ul>
