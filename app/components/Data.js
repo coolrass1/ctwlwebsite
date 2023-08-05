@@ -49,33 +49,40 @@ export const carsmain = [
     id: 1,
     title: "BMW 7 Series",
     imageSrc: "/images/cars/bmw7series/main.jpeg",
+    url:"/fleet/BMW-7-Series"
   },
   {
     id: 2,
     title: "BMW 5 Series",
     imageSrc: "/images/cars/bmw5series/main.jpeg",
+    url:"/fleet/BMW5series"
   },
   {
     id: 3,
-    title: "BMW 7i Series",
+    title: "BMW i7 Series",
     imageSrc: "/images/cars/bmw7iseries/main.jpg",
+    url:"/fleet/BMW-7i-Series"
   },
   {
     id: 4,
     title: "mercedes e class",
     imageSrc: "/images/cars/mercedes_e_class/main.jpg",
+    url:"/fleet/Mercedes-e-class"
   },
   {
     id: 5,
     title: "mercedes s class",
     imageSrc: "/images/cars/mercedes_s_class/main.jpg",
+    url:"/fleet/Mercedes-s-class"
   },
   {
     id: 6,
     title: "mercedes  viano",
     imageSrc: "/images/cars/mercedesviano/main.jpg",
+    url:"/fleet/MercedesViano"
   },
-  { id: 7, title: "rolls roys", imageSrc: "/images/cars/rollsroys/main.jpg" },
+  { id: 7, title: "rolls roys", imageSrc: "/images/cars/rollsroys/main.jpg" ,
+url:"/fleet/Rolls-Roye-Phantom"},
 ];
 
 export const bmw7icars = [

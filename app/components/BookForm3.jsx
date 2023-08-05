@@ -95,7 +95,7 @@ const BookForm3 = () => {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="username"
               >
-                Date{" "}
+                Date{" "}  <span className="text-red-600">*</span>
                 {errors.date && (
                   <span className="text-red-500">{"date is required"}</span>
                 )}
@@ -113,6 +113,7 @@ const BookForm3 = () => {
                 render={({ field }) => (
                   <DatePicker
                     //showIcon
+                    required
                     className="py-2"
                     placeholderText="Click to select a date" 
                     onChange={(date) => field.onChange(date)}

@@ -1,15 +1,21 @@
+//'use client'
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaCheck } from "react-icons/fa6";
+//import { useRouter } from "next/navigation";
 
 const CarsItem = ({car}) => {
+  
   return (
-    <div className=" hover:scale-[110%] max-w-[320px] h-full py-7 gap-7 border-2 flex flex-col justify-start items-start pl-7  shadow-md  ">
+    <Link href={car.url} className=" hover:scale-[110%] max-w-[320px] h-full py-7 gap-7 border-2 flex flex-col justify-start items-start pl-7 cursor-pointer shadow-md  ">
       <div className="flex-1">
         <Image
           src={car?.imageSrc}
           width={300}
           height={300}
+          alt="a car"
+          priority
           style={{objectFit:"contain"}}
         />
       </div>
@@ -29,7 +35,7 @@ const CarsItem = ({car}) => {
           <span>2 lugguges</span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

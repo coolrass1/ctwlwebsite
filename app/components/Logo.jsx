@@ -11,10 +11,7 @@ const Logo = () => {
       width={300}
       height={300}
       alt="logo"
-      // width={300}
-      // height={200}
-      // quality={70}
-      // alt="logo "
+     
     />
   </Link>
   )
