@@ -15,6 +15,7 @@ import { useRouter, useParams,usePathname } from "next/navigation";
 
 const Heading = () => {
 const [patths , setPatths]=useState('/')
+//const [iops , setIops]=useState(false)
   const router=useRouter()
   const params=useParams()
   const pat=usePathname()
@@ -22,7 +23,8 @@ const [patths , setPatths]=useState('/')
  useEffect(()=>{
 setPatths(pat)
  },[pat])
- console.log(patths.substring(0,6)=='/fleet')
+
+ //const Handleclick=(e)=>{e.preventDefault(); setIops(!iops)}
   
   return (
     <section>
@@ -34,23 +36,23 @@ setPatths(pat)
           <div>
             <ul className=" flex justify-start items-center gap-1">
               <li>
-                <Link href="/about-citywide-chauffeur-services/">About us</Link>{" "}
+                <Link href="/">About us</Link>{" "}
                 /
               </li>
 
               <li>
-                <Link href="/covid-19-statement/">COVID-19 Statement</Link> /
+                <Link href="/">COVID-19 Statement</Link> /
               </li>
 
               <li>
-                <Link href="/request-a-quote/">Quote Request</Link>
+                <Link href="/">Quote Request</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <div>
-            <Image src="/images/logo.png" width={300} height={300} alt="logo" />
+          <div className="cursor-pointer" onClick={e=>router.push("/")}>
+            <Image src="/images/logo.png" width={300} height={300} alt="logo" priority/>
           </div>
           <div className=" hidden md:flex justify-start items-center gap-2">
             <div className="border-r-2 border-l-2 px-5">
