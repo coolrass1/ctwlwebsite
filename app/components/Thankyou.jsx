@@ -3,7 +3,7 @@ import React from 'react'
 
 const Thankyou = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen transition-opacity">
     <div className="mx-7 p-4 py-7 rounded shadow-lg ring ring-green-900/50">
       <div className="flex flex-col items-center space-y-2">
         <svg xmlns="http://www.w3.org/2000/svg" className="text-green-600 w-28 h-28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">

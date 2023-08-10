@@ -15,13 +15,19 @@ import { useRouter, useParams,usePathname } from "next/navigation";
 
 const Heading = () => {
 const [patths , setPatths]=useState('/')
-//const [iops , setIops]=useState(false)
+const [iops , setIops]=useState(false)
   const router=useRouter()
+  const paaths= usePathname()
+  useEffect(()=>{
+    console.log("")
+setIops(false)
+  },[paaths])
   const params=useParams()
   const pat=usePathname()
  
  useEffect(()=>{
 setPatths(pat)
+console.log(pat+ "changing")
  },[pat])
 
  //const Handleclick=(e)=>{e.preventDefault(); setIops(!iops)}
@@ -104,33 +110,33 @@ setPatths(pat)
               </Link>
               {/* floating  */}
               <ul
-                className={` absolute opacity-0 z-[-99] text-black  mt-2  min-w-[20vw]  flex flex-col gap-2 bg-neutral-100 shadow-slate-900 shadow-2xl py-2`}
+                className={`${iops?'hidden opacity-0 absolute  z-[-99] text-black  mt-2  min-w-[20vw]  flex-col gap-2 bg-neutral-100 shadow-slate-900 shadow-2xl py-2':'absolute opacity-0 z-[-99] text-black  mt-2  min-w-[20vw]  flex flex-col gap-2 bg-neutral-100 shadow-slate-900 shadow-2xl py-2'}  `}
               >
-                <li className=" hover:bg-green-500  py-2 pl-1  ">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500  py-2 pl-1  ">
                   <Link href="/fleet/Mercedes-s-class">Mercedes S Class </Link>
                 </li>
-                <li className=" hover:bg-green-500  py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500  py-2 pl-1">
                   <Link href="/fleet/BMW-7i-Series">BMW i7 Series </Link>
                 </li>
-                <li className=" hover:bg-green-500  py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500  py-2 pl-1">
                   <Link href="/fleet/Mercedes-e-class">Mercedes E Class </Link>
                 </li>
-                <li className=" hover:bg-green-500 py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500 py-2 pl-1">
                   <Link href="/fleet/BMW5series">BMW 5 Series </Link>
                 </li>
-                <li className=" hover:bg-green-500 py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500 py-2 pl-1">
                   <Link href="/fleet/BMW-7-Series">BMW 7 Series </Link>
                 </li>
 
-                <li className=" hover:bg-green-500  py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500  py-2 pl-1">
                   <Link href="/fleet/MercedesViano">Mercedes Viano </Link>
                 </li>
-                <li className=" hover:bg-green-500  py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500  py-2 pl-1">
                   <Link href="/fleet/Rolls-Roye-Phantom">
                     Rolls Royce Phantom{" "}
                   </Link>
                 </li>
-                <li className=" hover:bg-green-500 py-2 pl-1">
+                <li onClick={e=>{setIops(true)}} className=" hover:bg-green-500 py-2 pl-1">
                   <Link href="/">Coaches </Link>
                 </li>
               </ul>
