@@ -1,3 +1,4 @@
+import Animater from '@/app/components/Animater'
 import FleetSidebar from '@/app/components/FleetSidebar'
 import HeroAbout from '@/app/components/HeroAbout'
 import MercedesEitem from '@/app/components/MercedesEitem'
@@ -5,6 +6,7 @@ import React from 'react'
 
 const page = () => {
   return (
+    <Animater>
 <section>
       <HeroAbout title="Mercedes E Class" />
       <main className="md:grid md:grid-cols-3 md:gap-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
@@ -14,6 +16,7 @@ const page = () => {
         </aside>
       </main>
     </section>
+    </Animater>
   )
 }
 

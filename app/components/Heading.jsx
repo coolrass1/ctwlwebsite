@@ -12,6 +12,7 @@ import Mobilemenu from "./Mobilemenu";
 import FleetHeader from "./FleetHeader";
 import Btn from "./Btn";
 import { useRouter, useParams,usePathname } from "next/navigation";
+import Animater from "./Animater";
 
 const Heading = () => {
 const [patths , setPatths]=useState('/')
@@ -34,6 +35,7 @@ console.log(pat+ "changing")
   
   return (
     <section>
+      <Animater>
       <div className="  hidden md:flex flex-col  gap-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl  ">
         <div className="hidden md:flex py-2 border-b-2  justify-between items-center text-sm">
           <div>
@@ -100,7 +102,7 @@ console.log(pat+ "changing")
             <li className={` ${patths=='/about'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/about">About us</Link>
             </li>
-            <li className={` ${patths.substring(0,6)=='/fleet'?'bg-green-900':''} relative py-7  hover:bg-green-600 [&>*:nth-child(2)]:hover:z-50 [&>*:nth-child(2)]:hover:opacity-100`}>
+            <li  onClick={e=>{setIops(true)}} className={` ${patths.substring(0,6)=='/fleet'?'bg-green-900':''} relative py-7  hover:bg-green-600 [&>*:nth-child(2)]:hover:z-50 [&>*:nth-child(2)]:hover:opacity-100`}>
               <Link
                 href="/fleet"
                 className="flex gap-1 justify-center items-center"
@@ -170,6 +172,7 @@ console.log(pat+ "changing")
         </nav>
       </div>
       <Mobilemenu />
+      </Animater>
     </section>
   );
 };

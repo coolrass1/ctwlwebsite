@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaRegCalendarCheck } from "react-icons/fa6";
+import SectionAnim from '../SectionAnim';
 
 const Item1 = () => {
   return (
@@ -10,6 +11,7 @@ const Item1 = () => {
         <FaRegCalendarCheck />
       </div>
     </div>
+    <SectionAnim>
     <div className="flex flex-col items-start justify-start gap-2">
       <h1 className='font-extrabold xl:text-2xl'>Easy Online Booking</h1>
       <div className="w-16 h-[2px] bg-green-900 mb-7"></div>
@@ -19,6 +21,7 @@ const Item1 = () => {
         or office.
       </p>
     </div>
+    </SectionAnim>
     </div>
   )
 }

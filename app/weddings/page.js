@@ -4,10 +4,12 @@ import HerAboutpic from "../components/HerAboutpic";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import Bogbutton from "../components/Bogbutton";
+import Animater from "../components/Animater";
 
 const page = () => {
   return (
     <div>
+      <Animater>
       <HerAboutpic title='url("/images/wedding.png")' />
       <section className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
         <main
@@ -72,6 +74,7 @@ const page = () => {
           <Bogbutton title="Request a Quote Now" url="/quotes" />
         </div>
       </section>
+      </Animater>
     </div>
   );
 };

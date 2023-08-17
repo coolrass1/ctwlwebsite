@@ -42,6 +42,7 @@ const Footer = () => {
               width={300}
               height={300}
               style={{ objectFit: "cover" }}
+              alt="footer"
             />
           </div>
         </div>

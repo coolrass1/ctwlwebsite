@@ -3,11 +3,13 @@ import React from "react";
 import HeroAbout from "../components/HeroAbout";
 import BookingForm from "../components/BookingForm";
 import QuoteForm from "../components/QuoteForm";
+import Animater from "../components/Animater";
 
 const page = () => {
  
   return (
     <section>
+      <Animater>
       <HeroAbout title="Quote Request" />
       <main className=" px-7 py-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl grid gap-4 grid-cols-1 md:grid-cols-2">
         <div>
@@ -318,6 +320,7 @@ const page = () => {
           </form> */}
         </div>
       </main>
+      </Animater>
     </section>
   );
 };

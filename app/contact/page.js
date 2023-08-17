@@ -5,10 +5,12 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import ContactForm from "../components/ContactForm";
+import Animater from "../components/Animater";
 
 const page = () => {
 
   return (
+    <Animater>
     <section>
       <HeroAbout title="Contact" />
       <main className="grid grid-cols-1  px-7 md:grid-cols-2 gap-3 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
@@ -61,6 +63,7 @@ const page = () => {
         </div>
       </main>
     </section>
+    </Animater>
   );
 };
 

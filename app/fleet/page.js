@@ -7,6 +7,7 @@ import FleetSidebar from "../components/FleetSidebar";
 
 const page = () => {
   return (
+    
     <section>
       <HeroAbout title="Our Fleet" />
       <div className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl md:grid md:grid-cols-3">

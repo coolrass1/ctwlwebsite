@@ -3,10 +3,12 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import HerAboutpic from "../components/HerAboutpic";
 import Bogbutton from "../components/Bogbutton";
+import Animater from "../components/Animater";
 
 const page = () => {
   return (
     <div>
+          <Animater>
       <HerAboutpic title='url("/images/westminster-abby.jpg")' />
       <section className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
 
@@ -57,7 +59,9 @@ const page = () => {
       <Bogbutton title=" Our Services" url="/about"/>
         <Bogbutton title=" Request a Quote Now" url="/quotes"/></div>
                 </section>
+                </Animater>
     </div>
+
   );
 };
 

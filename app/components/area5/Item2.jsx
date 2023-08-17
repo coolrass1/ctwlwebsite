@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa6";
+import SectionAnim from "../SectionAnim";
 
 const Item2 = () => {
   return (
@@ -10,6 +11,7 @@ const Item2 = () => {
           <FaStar />
         </div>
       </div>
+      <SectionAnim>
       <div className="flex flex-col items-start justify-start gap-2">
         <h1 className="font-extrabold xl:text-2xl">Professional Drivers</h1>
         <div className="w-16 h-[2px] bg-green-900 mb-7"></div>
@@ -18,6 +20,7 @@ const Item2 = () => {
           repeatedly because of our professionalism and punctuality.
         </p>
       </div>
+      </SectionAnim>
     </div>
   );
 };

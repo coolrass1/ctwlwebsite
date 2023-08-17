@@ -38,7 +38,7 @@ const ModalGallery2 = ({ isOpen, Handleisopen }) => {
           >
             <Image
               src={item?.gurl}
-              alt="pic"
+              alt={"copi"}
               width={370}
               height={370}
               style={{ objectFit: "cover", width: "100%", height: "100%" }}

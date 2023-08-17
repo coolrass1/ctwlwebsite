@@ -1,7 +1,7 @@
 export const area1 = {
   id: 1,
   btncontent: "Book now",
-  btnurl:"/booking",
+  btnurl: "/booking",
   title: "Quality comes as standard",
   urllink: "url(/images/area2.jpg)",
   source: "https://www.youtube.com/embed/KXvbSs31OsQ?autoplay=1&mute=1",
@@ -13,7 +13,7 @@ export const area = {
   id: 2,
   btncontent: "lear more",
   title: "About Us",
-  btnurl:"/about",
+  btnurl: "/about",
   urllink: "url(/images/area22.png)",
   source: "https://www.youtube.com/embed/F2NLxQKqgL0?autoplay=1&mute=1",
   content:
@@ -24,7 +24,7 @@ export const area9 = {
   btncontent: "Get a Quote",
   title: "Sightseeing tours, airport transfers and more",
   urllink: "url(/images/area9.jpg)",
-  btnurl:"/quotes",
+  btnurl: "/quotes",
   source: "https://www.youtube.com/embed/EJ4n_HVboxs?autoplay=1&mute=1",
   content:
     "If you want to see a variety of sights in the city, we can plan your route and stop off whenever and wherever you would like while your professional chauffeur waits on you as you explore. We also offer VIP airport chauffeur service for private charter airports such as Farnborough airport, Luton Private airport and Biggin Hill airport as well as most other major private airports across the country for your added convenience.",
@@ -49,120 +49,120 @@ export const carsmain = [
     id: 1,
     title: "BMW 7 Series",
     imageSrc: "/images/cars/bmw7series/main.jpeg",
-    url:"/fleet/BMW-7-Series"
+    url: "/fleet/BMW-7-Series",
   },
   {
     id: 2,
     title: "BMW 5 Series",
     imageSrc: "/images/cars/bmw5series/main.jpeg",
-    url:"/fleet/BMW5series"
+    url: "/fleet/BMW5series",
   },
   {
     id: 3,
     title: "BMW i7 Series",
     imageSrc: "/images/cars/bmw7iseries/main.jpg",
-    url:"/fleet/BMW-7i-Series"
+    url: "/fleet/BMW-7i-Series",
   },
   {
     id: 4,
     title: "mercedes e class",
     imageSrc: "/images/cars/mercedes_e_class/main.jpg",
-    url:"/fleet/Mercedes-e-class"
+    url: "/fleet/Mercedes-e-class",
   },
   {
     id: 5,
     title: "mercedes s class",
     imageSrc: "/images/cars/mercedes_s_class/main.jpg",
-    url:"/fleet/Mercedes-s-class"
+    url: "/fleet/Mercedes-s-class",
   },
   {
     id: 6,
     title: "mercedes  viano",
     imageSrc: "/images/cars/mercedesviano/main.jpg",
-    url:"/fleet/MercedesViano"
+    url: "/fleet/MercedesViano",
   },
-  { id: 7, title: "rolls roys", imageSrc: "/images/cars/rollsroys/main.jpg" ,
-url:"/fleet/Rolls-Roye-Phantom"},
+  {
+    id: 7,
+    title: "rolls roys",
+    imageSrc: "/images/cars/rollsroys/main.jpg",
+    url: "/fleet/Rolls-Roye-Phantom",
+  },
 ];
 
 export const bmw7icars = [
   { id: 1, imageSrc: "/images/cars/bmw7iseries/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/bmw7iseries/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/bmw7iseries/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/bmw7iseries/4.jpeg"},
-  {id:5, imageSrc:"/images/cars/bmw7iseries/5.jpeg"},
-  {id:6, imageSrc:"/images/cars/bmw7iseries/6.jpeg"},
-  {id:7, imageSrc:"/images/cars/bmw7iseries/7.jpeg"},
+  { id: 4, imageSrc: "/images/cars/bmw7iseries/4.jpeg" },
+  { id: 5, imageSrc: "/images/cars/bmw7iseries/5.jpeg" },
+  { id: 6, imageSrc: "/images/cars/bmw7iseries/6.jpeg" },
+  { id: 7, imageSrc: "/images/cars/bmw7iseries/7.jpeg" },
   // {id:8, imageSrc:"/images/cars/bmw7iseries/8.jpeg"},
 ];
 export const bmw7cars = [
   { id: 1, imageSrc: "/images/cars/bmw7series/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/bmw7series/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/bmw7series/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/bmw7series/4.jpeg"},
+  { id: 4, imageSrc: "/images/cars/bmw7series/4.jpeg" },
 
-  {id:6, imageSrc:"/images/cars/bmw7series/6.jpeg"},
-  {id:7, imageSrc:"/images/cars/bmw7series/7.jpeg"},
-   {id:8, imageSrc:"/images/cars/bmw7series/8.jpeg"},
-   {id:9, imageSrc:"/images/cars/bmw7series/main.jpeg"},
+  { id: 6, imageSrc: "/images/cars/bmw7series/6.jpeg" },
+  { id: 7, imageSrc: "/images/cars/bmw7series/7.jpeg" },
+  { id: 8, imageSrc: "/images/cars/bmw7series/8.jpeg" },
+  { id: 9, imageSrc: "/images/cars/bmw7series/main.jpeg" },
 ];
 export const mercedesEseries = [
   { id: 1, imageSrc: "/images/cars/mercedes_e_class/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/mercedes_e_class/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/mercedes_e_class/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/mercedes_e_class/4.jpeg"},
-  {id:5, imageSrc:"/images/cars/mercedes_e_class/5.jpeg"},
+  { id: 4, imageSrc: "/images/cars/mercedes_e_class/4.jpeg" },
+  { id: 5, imageSrc: "/images/cars/mercedes_e_class/5.jpeg" },
 
-  {id:6, imageSrc:"/images/cars/mercedes_e_class/6.jpeg"},
-  {id:7, imageSrc:"/images/cars/mercedes_e_class/main.jpg"},
-  
-  
+  { id: 6, imageSrc: "/images/cars/mercedes_e_class/6.jpeg" },
+  { id: 7, imageSrc: "/images/cars/mercedes_e_class/main.jpg" },
 ];
 
 export const mercedesSseries = [
   { id: 1, imageSrc: "/images/cars/mercedes_s_class/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/mercedes_s_class/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/mercedes_s_class/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/mercedes_s_class/4.jpeg"},
-  {id:5, imageSrc:"/images/cars/mercedes_s_class/5.png"},
+  { id: 4, imageSrc: "/images/cars/mercedes_s_class/4.jpeg" },
+  { id: 5, imageSrc: "/images/cars/mercedes_s_class/5.png" },
 
-  {id:6, imageSrc:"/images/cars/mercedes_s_class/6.jpeg"},
-  {id:7, imageSrc:"/images/cars/mercedes_s_class/7.jpg"},
-  {id:8, imageSrc:"/images/cars/mercedes_s_class/main.jpg"},
-  
-  
+  { id: 6, imageSrc: "/images/cars/mercedes_s_class/6.jpeg" },
+  { id: 7, imageSrc: "/images/cars/mercedes_s_class/7.jpg" },
+  { id: 8, imageSrc: "/images/cars/mercedes_s_class/main.jpg" },
 ];
 
 export const bmw5cars = [
   { id: 1, imageSrc: "/images/cars/bmw5series/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/bmw5series/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/bmw5series/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/bmw5series/4.jpeg"},
+  { id: 4, imageSrc: "/images/cars/bmw5series/4.jpeg" },
 
-  {id:5, imageSrc:"/images/cars/bmw5series/5.jpeg"},
+  { id: 5, imageSrc: "/images/cars/bmw5series/5.jpeg" },
 
-   {id:6, imageSrc:"/images/cars/bmw5series/main.jpeg"},
+  { id: 6, imageSrc: "/images/cars/bmw5series/main.jpeg" },
 ];
 
 export const mercedesviano = [
   { id: 1, imageSrc: "/images/cars/mercedesviano/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/mercedesviano/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/mercedesviano/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/mercedesviano/4.jpeg"},
+  { id: 4, imageSrc: "/images/cars/mercedesviano/4.jpeg" },
 
-  {id:5, imageSrc:"/images/cars/mercedesviano/5.jpeg"},
+  { id: 5, imageSrc: "/images/cars/mercedesviano/5.jpeg" },
 
-   {id:6, imageSrc:"/images/cars/mercedesviano/main.jpg"},
+  { id: 6, imageSrc: "/images/cars/mercedesviano/main.jpg" },
 ];
 
 export const rollsroyces = [
   { id: 1, imageSrc: "/images/cars/rollsroys/1.jpeg" },
   { id: 2, imageSrc: "/images/cars/rollsroys/2.jpeg" },
   { id: 3, imageSrc: "/images/cars/rollsroys/3.jpeg" },
-  {id:4, imageSrc:"/images/cars/rollsroys/4.jpeg"},
+  { id: 4, imageSrc: "/images/cars/rollsroys/4.jpeg" },
 
-  {id:5, imageSrc:"/images/cars/rollsroys/5.jpeg"},
-  {id:6, imageSrc:"/images/cars/rollsroys/6.jpeg"},
+  { id: 5, imageSrc: "/images/cars/rollsroys/5.jpeg" },
+  { id: 6, imageSrc: "/images/cars/rollsroys/6.jpeg" },
 
-   {id:7, imageSrc:"/images/cars/rollsroys/main.jpg"},
+  { id: 7, imageSrc: "/images/cars/rollsroys/main.jpg" },
 ];

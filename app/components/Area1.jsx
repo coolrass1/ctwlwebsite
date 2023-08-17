@@ -3,6 +3,7 @@ import { useState } from "react";
 import ButtonComponent from "./ButtonComponent";
 import {FaPlay} from 'react-icons/fa6'
 import Modal from "./Modal";
+import SectionAnim from "./SectionAnim";
 
 
 const Area1 = ({ctp}) => {
@@ -12,6 +13,7 @@ const Area1 = ({ctp}) => {
       <article className="px-7 py-5 flex flex-col gap-4 md:flex-1">
         <h1 className="text-2xl">{ctp?.title}</h1>
         <div className="h-[5px] w-[40px] bg-green-900"></div>
+        <SectionAnim>
         <p className="text-sm  py-5 leading-7 md:text-base md:leading-9">
           {/* Book a luxury chauffeur driven Mercedes S Class, BMW 7 Series,
           executive Mercedes E class, Mercedes Viano, or BMW 5 Series featuring
@@ -21,6 +23,7 @@ const Area1 = ({ctp}) => {
           can rely on us, as you need a transportation service you can rely on. */}
         {ctp?.content}
         </p>
+        </SectionAnim>
         <ButtonComponent title={ctp?.btncontent} url={ctp?.btnurl} />
          
       </article>
