@@ -20,7 +20,7 @@ const page = () => {
             submitting this form or by emailing{" "}
             <span className="text-green-900">info@citywidelondon.co.uk</span>
           </p>
-          <p className=" mb-3 w-[80%]">
+          {/* <p className=" mb-3 w-[80%]">
             If you wish to book a car with less than 12 hours’ notice, kindly
             call us on{" "}
             <span className="text-green-900">+44 (0) 207 474 4828.</span>
@@ -31,7 +31,7 @@ const page = () => {
           </p>
           <p className=" mb-3 w-[80%]">
             Online rates do not include Car Park and waiting charges.
-          </p>
+          </p> */}
         </div>
         <div>
           <QuoteForm/>

@@ -16,11 +16,21 @@ export const sendMail =async function(frommail,tomail,subject, message){
         subject: subject,
         html: message
       }  
-      transporter.sendMail(mailData, function (err, info) {
-        if(err)
-          console.log("cant send"+err)
-        else
-          console.log("succes")
-      })
+      // transporter.sendMail(mailData, function (err, info) {
+      //   if(err)
+      //     console.log("cant send"+err)
+      //   else
+      //     console.log("succes")
+      // })
+
+      try {
+        await transporter.sendMail(mailData)
+        console.log("mail sent")
+        
+      } catch (error) {
+
+        console.log("error")
+        
+      }
 
 }
