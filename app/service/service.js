@@ -24,8 +24,8 @@ export const sendMail =async function(frommail,tomail,subject, message){
       // })
 
       try {
-        await transporter.sendMail(mailData)
-        console.log("mail sent")
+        const result= await transporter.sendMail(mailData)
+        console.log(result)
         
       } catch (error) {
 
