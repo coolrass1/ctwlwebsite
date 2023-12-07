@@ -60,7 +60,7 @@ const BookForm3 = () => {
     
     const result = await response.json();
 
-    console.log(`result is ${JSON.stringify(result)}}`)
+    // console.log(`result is ${JSON.stringify(result)}}`)
     
    // results && setThankyou(true);
     //results && router.push("/thankyou");
