@@ -21,6 +21,6 @@ export async function POST(request) {
              
 
   await sendMail(email, emailer, mailTitle, dtr);
-
+console.log("contact")
   return NextResponse.json({ success: true });
 }

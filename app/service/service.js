@@ -25,11 +25,14 @@ export const sendMail =async function(frommail,tomail,subject, message){
 
       try {
         const result= await transporter.sendMail(mailData)
-        console.log(result)
+        return true
         
       } catch (error) {
 
-        console.log("error")
+
+        console.log(error)
+
+        return false
         
       }
 

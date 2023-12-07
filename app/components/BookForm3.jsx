@@ -31,6 +31,7 @@ const BookForm3 = () => {
     reset();
   };
   const getdata = async (data) => {
+    console.log("calling .... BookForm3")
     // Send the data to the server in JSON format.
     const JSONdata = JSON.stringify(data);
     setbtnloading(true);
@@ -53,12 +54,18 @@ const BookForm3 = () => {
     // Send the form data to our forms API on Vercel and get a response.
     const response = await fetch(endpoint, options);
 
+
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
+    
     const result = await response.json();
-    const results = result.success;
-    results && setThankyou(true);
+
+    console.log(`result is ${JSON.stringify(result)}}`)
+    
+   // results && setThankyou(true);
     //results && router.push("/thankyou");
+    result.success?setThankyou(true):setThankyou(false)
+    setbtnloading(false);
     reset();
   };
 

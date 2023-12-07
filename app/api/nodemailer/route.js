@@ -37,8 +37,15 @@ export async function POST(request) {
               <p>Cartype: ${cartype}</p>
               
               `;
+            
+          
+                const rs= await sendMail(email, emailer, subject, dtr);
+            
+                return NextResponse.json({ success: rs });
+            
 
-  await sendMail(email, emailer, subject, dtr);
+  
 
-  return NextResponse.json({ success: true });
+
+
 }
