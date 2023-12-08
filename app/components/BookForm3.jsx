@@ -14,6 +14,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 const BookForm3 = () => {
   const [thankyou, setThankyou] = useState(false);
+  const [emailfail, setEmailfail] = useState(false);
   const [btnloading, setbtnloading] = useState(false);
   const [startDate, setStartDate] = useState(Date.now);
   const router = useRouter();
@@ -64,7 +65,7 @@ const BookForm3 = () => {
     
    // results && setThankyou(true);
     //results && router.push("/thankyou");
-    result.success?setThankyou(true):setThankyou(false)
+    result.success?setThankyou(true):setEmailfail(true)
     setbtnloading(false);
     reset();
   };
@@ -281,7 +282,9 @@ const BookForm3 = () => {
       </>
     );
   };
-  return thankyou ? <Thankyou /> : <Formi />;
+  if (thankyou) return  <Thankyou />
+  if(emailfail) return <h1 className="text-red-950 text-9xl">Error happened</h1>
+  return  <Formi />;
 };
 
 export default BookForm3;
