@@ -283,7 +283,7 @@ const BookForm3 = () => {
     );
   };
   if (thankyou) return  <Thankyou />
-  if(emailfail) return <h1 className="text-red-950 text-9xl">Error happened</h1>
+  if(emailfail) return <h1 className="text-red-950 text-xl">Error</h1>
   return  <Formi />;
 };
 

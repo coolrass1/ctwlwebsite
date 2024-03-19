@@ -165,6 +165,9 @@ console.log(pat+ "changing")
             <li className={` ${patths=='/booking'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
               <Link href="/booking">Booking</Link>
             </li>
+            <li className={` ${patths=='/privacy'?'bg-green-900':''} py-7 px-2 hover:bg-green-600`}>
+              <Link href="/privacy">Privacy</Link>
+            </li>
           </ul>
           <div className="flex items-center justify-center mr-5 ">
             <FaSearch />
