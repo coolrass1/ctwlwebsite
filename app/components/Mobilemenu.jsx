@@ -141,6 +141,12 @@ const Mobilemenu = () => {
               }} className=" w-full  px-2 hover:bg-green-600">
           <Link href="/booking">Booking</Link>
         </li>
+        <li   onClick={(e) => {
+                
+                setOpenNav(false);
+              }} className=" w-full  px-2 hover:bg-green-600">
+          <Link href="/privacy">Privacy</Link>
+        </li>
       </ul>
     </div>
   );
