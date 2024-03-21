@@ -10,7 +10,7 @@ const page = () => {
      grid grid-cols-1 gap-3 
     "
         >
- <p className='text-gray-700 lg:mb-7'>At CitywideLondon , we value your privacy and are committed to protecting your personal information. This Privacy Policy explains the types of information we collect, how we use and share it, and your rights and choices regarding your personal data. By using our website and services, you agree to the terms of this Privacy Policy.</p>
+ <p className='text-gray-700 lg:mb-7'>At Citywide London , we value your privacy and are committed to protecting your personal information. This Privacy Policy explains the types of information we collect, how we use and share it, and your rights and choices regarding your personal data. By using our website and services, you agree to the terms of this Privacy Policy.</p>
  <section className='flex flex-col gap-6 text-gray-500' >
   <h5 className='text-gray-800'>1. Information We Collect</h5>
   <p>We collect the following types of personal information:</p>
@@ -23,8 +23,8 @@ const page = () => {
  <section className='flex flex-col mt-7 gap-6 text-gray-500'>
  <h5 className='text-gray-800'>2. How We Use Your Information </h5>
  <p>We use your personal information for the following purposes:</p>
- <p>(a) To process your booking and provide our airport transfer services.</p>
- <p>(b) To communicate with you regarding your booking, including sending confirmation emails, updates, and notifications.</p>
+ <p>(a) To process your booking and provide our  services.</p>
+ <p>(b) To communicate with you, regarding your booking, including sending confirmation emails, updates, and notifications.</p>
  <p>(c) To personalise your user experience and improve our website and services.</p>
  <p>(d) To process payments and prevent fraud.</p>
  <p>(e) To comply with legal obligations and protect our rights and interests.</p>
@@ -33,7 +33,7 @@ const page = () => {
  <section className='flex flex-col mt-7 gap-6 text-gray-500'>
  <h5 className='text-gray-800'>3. Sharing Your Information </h5>
  <p>We may share your personal information with the following parties:</p>
- <p>(a) Our drivers and subcontractors, as necessary to provide our services.</p>
+ <p>(a) Our drivers and sub contractors, as necessary to provide our services.</p>
  <p>(b) Payment processors and financial institutions, for payment processing and fraud prevention.</p>
  <p>(c) Government authorities and law enforcement agencies, as required by law or to protect our rights and interests.</p>
  <p>(d) Third-party service providers, such as data storage and analytics providers, to help us improve our website and services.</p>
@@ -53,7 +53,7 @@ const page = () => {
  <h5 className='text-gray-800'>5. Cookies and Tracking Technologies</h5>
  <p>We use cookies and other tracking technologies to collect usage data, personalise your user experience, and improve our website and services. You can manage your cookie preferences in your browser’s settings.</p>
  <h5 className='text-gray-800'>6. Data Retention</h5>
- <p>We retain your personal information for as long as necessary to fulfil the purposes for which it was collected, comply with legal obligations, and protect our rights and interests.</p>
+ <p>We retain your personal information for as long as the law required to fulfil the purposes for which it was collected, comply with legal obligations, and protect our rights and interests.</p>
  <h5 className='text-gray-800'>7. Changes to Our Privacy Policy</h5>
  <p>We may update this Privacy Policy from time to time to reflect changes in our privacy practises or applicable laws. We will notify you of any significant changes by posting a notice on our website or contacting you directly.</p>
  <h5 className='text-gray-800'>8. Contact Us</h5>
