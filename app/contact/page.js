@@ -1,4 +1,3 @@
-
 import React from "react";
 import HeroAbout from "../components/HeroAbout";
 import { FaLocationDot } from "react-icons/fa6";
@@ -7,64 +6,64 @@ import { GrMail } from "react-icons/gr";
 import ContactForm from "../components/ContactForm";
 import Animater from "../components/Animater";
 
-const page = () => {
-
+const Page = () => {
   return (
     <Animater>
-    <section>
-      <HeroAbout title="Contact" />
-      <main className="grid grid-cols-1  px-7 md:grid-cols-2 gap-3 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
-        <div className="order-2 md:order-1 pt-11">
-          <h1 className="mb-3">Contact Details</h1>
-          <div className="h-[2px] w-24 bg-green-900 mb-7 "></div>
-          <div>
-            <div className="py-3 border-t-[0.5px] border-b-[0.5px]  flex  justify-start items-center gap-3">
-              <div className="flex justify-center items-center text-green-900">
-                {" "}
-                <FaLocationDot />
-              </div>{" "}
-              <div className="w-[80%]">
-                First Floor, 49 Skyline Business Village, Limeharbour, London,
-                E14 9TS, United Kingdom
+      <section>
+        <HeroAbout title="Contact" />
+        <main className="container mx-auto px-7 py-10 max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          {/* Left Column - Contact Details */}
+          <div className="order-2 md:order-1">
+            <h1 className="text-2xl font-semibold mb-3">Contact Details</h1>
+            <div className="w-24 h-[2px] bg-green-900 mb-6" />
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 border-y py-3">
+                <FaLocationDot className="text-green-900 mt-1" />
+                <p className="w-[80%]">
+                  First Floor, 49 Skyline Business Village, Limeharbour, London,
+                  E14 9TS, United Kingdom
+                </p>
               </div>
-            </div>
-            <div className="py-3 border-b-[0.5px] flex  justify-start items-center gap-3">
-              <div className="flex justify-center items-center text-green-900">
-                {" "}
-                <FaPhoneAlt />
-              </div>{" "}
-              <div className="w-[80%]">
-                +44 (0) 20 7474 4828 | +44 7484 718117 (WhatsApp)
+
+              <div className="flex items-start gap-3 border-b py-3">
+                <FaPhoneAlt className="text-green-900 mt-1" />
+                <p className="w-[80%]">
+                  +44 (0) 20 7474 4828 | +44 7484 718117 (WhatsApp)
+                </p>
               </div>
-            </div>
-            <div className="py-3 border-b-[0.5px] flex justify-start items-center gap-3">
-              <div className="flex justify-center items-center text-green-900">
-                {" "}
-                <GrMail />
-              </div>{" "}
-              <div className="w-[80%]">info@citywidelondon.co.uk</div>
+
+              <div className="flex items-start gap-3 border-b py-3">
+                <GrMail className="text-green-900 mt-1" />
+                <p className="w-[80%]">info@citywidelondon.co.uk</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="order-1 md:order-2 pt-11">
-        <h1 className="mb-3">Get In Touch</h1>
-          <div className="h-[2px] w-24 bg-green-900 mb-7 "></div>
-          <p className="py-4">
-            We make sure you have an experienced team member to talk to from the
-            start. You will have direct contact with your driver – someone who
-            will get to know you, your timetables, routes and preferences. We
-            are available 24hrs a day, seven days a week, and 365 days a year.
-          </p>
-          <p className="py-4">
-            We believe in providing a timely and efficient service, so contact
-            any of our team on the number below for further information.
-          </p>
-        <ContactForm/>
-        </div>
-      </main>
-    </section>
+
+          {/* Right Column - Contact Form */}
+          <div className="order-1 md:order-2">
+            <h1 className="text-2xl font-semibold mb-3">Get In Touch</h1>
+            <div className="w-24 h-[2px] bg-green-900 mb-6" />
+
+            <p className="mb-4">
+              We make sure you have an experienced team member to talk to from
+              the start. You will have direct contact with your driver – someone
+              who will get to know you, your timetables, routes and preferences.
+              We are available 24 hours a day, seven days a week, 365 days a year.
+            </p>
+
+            <p className="mb-6">
+              We believe in providing a timely and efficient service, so contact
+              any of our team members using the number below for further information.
+            </p>
+
+            <ContactForm />
+          </div>
+        </main>
+      </section>
     </Animater>
   );
 };
 
-export default page;
+export default Page;

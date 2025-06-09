@@ -7,284 +7,252 @@ import { FaSpinner } from "react-icons/fa6";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import PhoneInput from "react-phone-input-2";
-import ReactPhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import MyDatePicker from "./MyDatePicker";
-import { FaCalendarAlt } from "react-icons/fa";
 
 const BookForm3 = () => {
   const [thankyou, setThankyou] = useState(false);
   const [emailfail, setEmailfail] = useState(false);
   const [btnloading, setbtnloading] = useState(false);
-  const [startDate, setStartDate] = useState(Date.now);
+  const [startDate] = useState(new Date());
   const router = useRouter();
+  
   const {
     register,
     handleSubmit,
-    watch,
-    reset,
     control,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
 
-    getdata(data);
-    reset();
-  };
-  const getdata = async (data) => {
-    console.log("calling .... BookForm3")
-    // Send the data to the server in JSON format.
-    const JSONdata = JSON.stringify(data);
-    setbtnloading(true);
+  const onSubmit = async (data) => {
+    try {
+      setbtnloading(true);
+      const response = await fetch("/api/nodemailer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    // API endpoint where we send form data.
-    const endpoint = "/api/nodemailer";
-
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    // Send the form data to our forms API on Vercel and get a response.
-    const response = await fetch(endpoint, options);
-
-
-    // Get the response data from server as JSON.
-    // If server returns the name submitted, that means the form works.
-    
-    const result = await response.json();
-
-    // console.log(`result is ${JSON.stringify(result)}}`)
-    
-   // results && setThankyou(true);
-    //results && router.push("/thankyou");
-    result.success?setThankyou(true):setEmailfail(true)
-    setbtnloading(false);
-    reset();
+      const result = await response.json();
+      result.success ? setThankyou(true) : setEmailfail(true);
+    } catch (error) {
+      console.error("Submission error:", error);
+      setEmailfail(true);
+    } finally {
+      setbtnloading(false);
+      reset();
+    }
   };
 
-  const Formi = function () {
-    return (
-      <>
-        <form
-          className="shadow-md bg-slate-100 md:p-3"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Name <span className="text-red-600">*</span>
-              </label>
-              <input
-                {...register("name", { required: true })}
-                className="shadow appearance-none border rounded 
-            w-full py-2 px-3 text-gray-700
-           leading-tight focus:outline-none 
-           focus:shadow-outline"
+  const ErrorMessage = ({ error }) => (
+    error && <span className="text-red-500 ml-2 text-sm">{error.message || "This field is required"}</span>
+  );
+
+  const FormFields = () => (
+    <form
+      className="shadow-md bg-slate-100 md:p-3"
+      onSubmit={handleSubmit(onSubmit)}
+      aria-label="Car booking form"
+    >
+      <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Name Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+            Name <span className="text-red-600">*</span>
+          </label>
+          <input
+            {...register("name", { required: "Name is required" })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder="Please enter your name"
+            aria-invalid={errors.name ? "true" : "false"}
+            aria-describedby="name-error"
+          />
+          <ErrorMessage error={errors.name} />
+        </div>
+
+        {/* Date Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="dateofbooking">
+            Date <span className="text-red-600">*</span>
+          </label>
+          <Controller
+            control={control}
+            name="dateofbooking"
+            rules={{ required: "Date is required" }}
+            render={({ field }) => (
+              <DatePicker
                 required
-                type="text"
-                placeholder="Please enter your name"
+                className="w-full p-2 border rounded shadow focus:outline-none focus:shadow-outline"
+                placeholderText="Select date and time"
+                onChange={(date) => field.onChange(date)}
+                selected={field.value}
+                showTimeSelect
+                timeIntervals={15}
+                dateFormat="MMMM d, yyyy h:mm aa"
+                minDate={startDate}
+                withPortal
+                aria-invalid={errors.dateofbooking ? "true" : "false"}
+                aria-describedby="date-error"
               />
-              {errors.name && "First name is required"}
-            </div>
-
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Date{" "}  <span className="text-red-600">*</span>
-                {errors.date && (
-                  <span className="text-red-500">{"date is required"}</span>
-                )}
-              </label>
-              {/* < DatePicker 
-                className="py-2 shadow-sm"
-                 selected={startDate} 
-                 onChange={(date) => setStartDate(date)}
-                 showTimeSelect
-                 dateFormat="Pp" /> */}
-              <Controller
-                control={control}
-                name="dateofbooking"
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <DatePicker
-                    //showIcon
-                    required
-                    className="py-2"
-                    placeholderText="Click to select a date" 
-                    onChange={(date) => field.onChange(date)}
-                    selected={field.value}
-                    showTimeSelect
-                    dateFormat="Pp"
-                    isClearable
-                    minDate={startDate}
-                    withPortal
-                  />
-                  // <MyDatePicker
-
-                  // />
-                )}
-              />
-            </div>
-          </fieldset>
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="mb-4 max-w-[80px]">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Phone <span className="text-red-600">*</span>
-                {errors.phone && (
-                  <span className="text-red-500 ml-2">
-                    {"phone number is required"}
-                  </span>
-                )}
-              </label>
-
-              <Controller
-                control={control}
-                name="phone"
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <PhoneInput
-                    containerStyle={{ width: "20px" }}
-                    country={"gb"}
-                    //value={this.state.phone}
-                    //onChange={phone => this.setState({ phone })}
-                    placeholderText="Select date"
-                    onChange={(phone) => field.onChange(phone)}
-                    selected={field.value}
-                  />
-                )}
-              />
-            </div>
-            {/* hshs */}
-          </fieldset>
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Your Email <span className="text-red-600">*</span>
-              </label>
-              <input
-                {...register("email", { required: true })}
-                className="shadow appearance-none border rounded 
-            w-full py-2 px-3 text-gray-700
-           leading-tight focus:outline-none 
-           focus:shadow-outline"
-                required
-                type="email"
-                placeholder="Please enter your email"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="countries"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Select a Brand
-              </label>
-              <select
-                id="countries"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                {...register("cartype")}
-              >
-                <option selected>Any Brand</option>
-                <option value="Mercedes Class S">Mercedes class S</option>
-                <option value="BMWi7">BMWi7</option>
-                <option value="Mercedes Class E">Mercedes class E</option>
-                <option value="BMW5">BMW5</option>
-                <option value="Mercedes Viano">Mercedes Viano</option>
-                <option value="Rolls Fantom">Roll Royce Phatom</option>
-                <option value="BMW7">BMW7</option>
-              </select>
-            </div>
-          </fieldset>
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="">
-              <label
-                htmlFor="about"
-                className="block text-base font-semibold leading-6 text-gray-900"
-              >
-                Your pick up address <span className="text-red-600">*</span>
-              </label>
-              <div className="mt-2">
-                <textarea
-                  {...register("pickupaddress", { required: true })}
-                  rows="3"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
-            </div>
-            <div className="">
-              <label
-                htmlFor="about"
-                className="block text-base font-semibold leading-6 text-gray-900"
-              >
-                Your destination address <span className="text-red-600">*</span>
-              </label>
-              <div className="mt-2">
-                <textarea
-                  {...register("destination", { required: true })}
-                  rows="3"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <div className="col-span-full pt-7">
-              <label
-                htmlFor="about"
-                className="block text-base font-semibold leading-6 text-gray-900"
-              >
-                Your message (optional)
-              </label>
-              <div className="mt-2">
-                <textarea
-                  {...register("omessage")}
-                  rows="3"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
-            </div>
-          </fieldset>
-          <button
-            type="submit"
-            className="w-full mt-7 bg-green-900   disabled:bg-black flex justify-center items-center gap-3  py-7 text-white shadow-sm rounded-md hover:bg-green-700"
-            disabled={btnloading ? true : false}
-          >
-            {btnloading ? (
-              <>
-                <FaSpinner className="text-center animate-spin text-yellow-300" />{" "}
-                Processing
-              </>
-            ) : (
-              "SEND"
             )}
-          </button>
-        </form>
-      </>
-    );
-  };
-  if (thankyou) return  <Thankyou />
-  if(emailfail) return <h1 className="text-red-950 text-xl">Error</h1>
-  return  <Formi />;
+          />
+          <ErrorMessage error={errors.dateofbooking} />
+        </div>
+
+        {/* Phone Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+            Phone <span className="text-red-600">*</span>
+          </label>
+          <Controller
+            control={control}
+            name="phone"
+            rules={{ required: "Phone number is required" }}
+            render={({ field }) => (
+              <PhoneInput
+                country={"gb"}
+                inputClass="w-full p-2 border rounded shadow focus:outline-none focus:shadow-outline"
+                containerClass="w-full"
+                inputProps={{
+                  required: true,
+                  "aria-invalid": errors.phone ? "true" : "false",
+                  "aria-describedby": "phone-error"
+                }}
+                onChange={(phone) => field.onChange(phone)}
+                value={field.value}
+              />
+            )}
+          />
+          <ErrorMessage error={errors.phone} />
+        </div>
+
+        {/* Email Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            Your Email <span className="text-red-600">*</span>
+          </label>
+          <input
+            {...register("email", { 
+              required: "Email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address"
+              }
+            })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="email"
+            placeholder="Please enter your email"
+            aria-invalid={errors.email ? "true" : "false"}
+            aria-describedby="email-error"
+          />
+          <ErrorMessage error={errors.email} />
+        </div>
+
+        {/* Car Type Field */}
+        <div className="mb-4">
+          <label htmlFor="cartype" className="block text-gray-700 text-sm font-bold mb-2">
+            Select a Brand
+          </label>
+          <select
+            id="cartype"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            {...register("cartype")}
+            defaultValue="Any Brand"
+          >
+            <option value="Any Brand">Any Brand</option>
+            <option value="Mercedes Class S">Mercedes class S</option>
+            <option value="BMWi7">BMWi7</option>
+            <option value="Mercedes Class E">Mercedes class E</option>
+            <option value="BMW5">BMW5</option>
+            <option value="Mercedes Viano">Mercedes Viano</option>
+            <option value="Rolls Fantom">Roll Royce Phantom</option>
+            <option value="BMW7">BMW7</option>
+          </select>
+        </div>
+
+        {/* Pickup Address */}
+        <div className="mb-4">
+          <label htmlFor="pickupaddress" className="block text-gray-700 text-sm font-bold mb-2">
+            Your pick up address <span className="text-red-600">*</span>
+          </label>
+          <textarea
+            {...register("pickupaddress", { required: "Pickup address is required" })}
+            id="pickupaddress"
+            rows="3"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+            aria-invalid={errors.pickupaddress ? "true" : "false"}
+            aria-describedby="pickup-error"
+          ></textarea>
+          <ErrorMessage error={errors.pickupaddress} />
+        </div>
+
+        {/* Destination Address */}
+        <div className="mb-4">
+          <label htmlFor="destination" className="block text-gray-700 text-sm font-bold mb-2">
+            Your destination address <span className="text-red-600">*</span>
+          </label>
+          <textarea
+            {...register("destination", { required: "Destination address is required" })}
+            id="destination"
+            rows="3"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+            aria-invalid={errors.destination ? "true" : "false"}
+            aria-describedby="destination-error"
+          ></textarea>
+          <ErrorMessage error={errors.destination} />
+        </div>
+      </fieldset>
+
+      {/* Optional Message */}
+      <div className="mb-4 pt-4">
+        <label htmlFor="omessage" className="block text-gray-700 text-sm font-bold mb-2">
+          Your message (optional)
+        </label>
+        <textarea
+          {...register("omessage")}
+          id="omessage"
+          rows="3"
+          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+        ></textarea>
+      </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="w-full mt-4 bg-green-900 disabled:bg-gray-500 flex justify-center items-center gap-3 py-3 text-white shadow-sm rounded-md hover:bg-green-700 transition-colors duration-200"
+        disabled={btnloading}
+        aria-busy={btnloading}
+      >
+        {btnloading ? (
+          <>
+            <FaSpinner className="animate-spin text-yellow-300" />
+            Processing
+          </>
+        ) : (
+          "SEND BOOKING REQUEST"
+        )}
+      </button>
+    </form>
+  );
+
+  if (thankyou) return <Thankyou />;
+  if (emailfail) return (
+    <div className="max-w-md mx-auto p-4 bg-red-100 border-l-4 border-red-500 text-red-700">
+      <h2 className="text-xl font-bold mb-2">Submission Error</h2>
+      <p>We couldn't process your booking request. Please try again or contact us directly.</p>
+      <button 
+        onClick={() => setEmailfail(false)}
+        className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+      >
+        Try Again
+      </button>
+    </div>
+  );
+
+  return <FormFields />;
 };
 
 export default BookForm3;

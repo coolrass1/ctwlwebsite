@@ -4,88 +4,67 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const ConciergeItem = () => {
   return (
-    <div className="pt-11 px-7">
+    <section className="pt-11 px-7" aria-labelledby="concierge-heading">
+      <h2 id="concierge-heading" className="sr-only">Concierge Services</h2>
+
       <p className="pb-7">
-        Alongside our chauffeurs service we can also provide VIP concierge to
-        carry out tasks so you don’t have to. Be it for shopping trips, tours
-        guides, securing tickets for events & restaurants on your behalf; we
-        have the right personnel to fulfil your needs.
+        Alongside our chauffeur service, we can also provide VIP concierge to
+        carry out tasks so you don’t have to. From shopping trips and tour
+        guides to securing tickets for events and restaurants, we have the right
+        personnel to fulfill your needs.
       </p>
+
       <p className="pb-7">
-        We can also provide close protection security personnel, tour guides and
+        We also offer close protection security personnel, tour guides, and
         personal assistants to support travel arrangements for you and your
-        guests. Email us now at{" "}
-        <span className="text-green-900 font-bold">
+        guests. Email us at{" "}
+        <a
+          href="mailto:info@citywidelondon.co.uk"
+          className="text-green-900 font-bold underline"
+        >
           info@citywidelondon.co.uk
-        </span>{" "}
-        or call now on
-        <span className="text-green-900 font-bold">
+        </a>{" "}
+        or call us on{" "}
+        <a
+          href="tel:+442074744828"
+          className="text-green-900 font-bold underline"
+        >
           +44 (0) 20 7474 4828
-        </span>{" "}
+        </a>.
       </p>
-      <h1 className="text-black font-extrabold">Contact us to find out more about:</h1>
-      <div className=" py-11 grid grid-cols-1 gap-3 md:gap-1 md:grid-cols-2">
-        <div>
-          <div className="flex items-center gap-1  py-2">
-            <div className="flex justify-center items-center text-green-900">
-              <FaArrowRight />
-            </div>
-            <span className="text-sm font-normal text-neutral-600">
-              Professional chauffeur & luxury vehicle
-            </span>
-          </div>
-          <div className="flex items-center gap-1  py-2">
-            <div className="flex justify-center items-center text-green-900">
-              <FaArrowRight />
-            </div>
-            <span className="text-sm font-normal text-neutral-600">
-              Professional concierge / assistant
-            </span>
-          </div>
-          <div className="flex items-center gap-1  py-2">
-            <div className="flex justify-center items-center text-green-900">
-              <FaArrowRight />
-            </div>
-            <span className="text-sm font-normal text-neutral-600">
-              SIA licensed security personnel
-            </span>
-          </div>
-          <div className="flex items-center gap-1  py-2">
-            <div className="flex justify-center items-center text-green-900">
-              <FaArrowRight />
-            </div>
-            <span className="text-sm font-normal text-neutral-600">
-              Event and ticket bookings
-            </span>
-          </div>
-          <div className="flex items-center gap-1  py-2">
-            <div className="flex justify-center items-center text-green-900">
-              <FaArrowRight />
-            </div>
-            <span className="text-sm font-normal text-neutral-600">
-              Entourage transportation
-            </span>
-          </div>
-          <div className="flex items-center gap-1  py-2">
-            <div className="flex justify-center items-center text-green-900">
-              <FaArrowRight />
-            </div>
-            <span className="text-sm font-normal text-neutral-600">
-              Tour guides
-            </span>
-          </div>
-        </div>
-        <div>
-          <Image
-            width={300}
-            height={300}
-            src="/images/concierge.png"
-            style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            alt="concierge"
-          />
-        </div>
+
+      <h3 className="text-black font-extrabold">
+        Contact us to find out more about:
+      </h3>
+
+      <div className="py-11 grid grid-cols-1 gap-3 md:gap-1 md:grid-cols-2">
+        <ul aria-label="Concierge services offered" className="space-y-2">
+          {[
+            "Professional chauffeur & luxury vehicle",
+            "Professional concierge / assistant",
+            "SIA licensed security personnel",
+            "Event and ticket bookings",
+            "Entourage transportation",
+            "Tour guides",
+          ].map((item, index) => (
+            <li key={index} className="flex items-center gap-2 py-2">
+              <FaArrowRight className="text-green-900" aria-hidden="true" />
+              <span className="text-sm font-normal text-neutral-600">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <Image
+          width={300}
+          height={300}
+          src="/images/concierge.png"
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          alt="Citywide London concierge service representative"
+        />
       </div>
-    </div>
+    </section>
   );
 };
 
