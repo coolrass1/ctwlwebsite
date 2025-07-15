@@ -1,82 +1,70 @@
 import React from "react";
-import HeroAbout from "../components/HeroAbout";
-import HerAboutpic from "../components/HerAboutpic";
-import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa6";
+import HerAboutpic from "../components/HerAboutpic";
 import Bogbutton from "../components/Bogbutton";
 import Animater from "../components/Animater";
 
-const page = () => {
+const WeddingPage = () => {
   return (
-    <div>
-      <Animater>
+    <Animater>
+      {/* Hero image background */}
       <HerAboutpic title='url("/images/wedding.png")' />
-      <section className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
-        <main
-          className="pt-11 px-7 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl
-     grid grid-cols-1 gap-3 md:grid-cols-2
-    "
-        >
-          <div className="flex flex-col gap-3">
-            <h1>Prestigious Wedding Cars</h1>
-            <div className="h-[1px] w-12 bg-green-900"></div>
-            <p className="py-5">
-              Citywide London offers an affordable wedding car service,
-              providing brides and grooms with the wedding cars of their dreams.
-              You can expect a professional and experienced chauffeur driver who
-              will chauffeur you in style on your special day, providing you
-              with the luxury you deserve on the most important occasion of your
-              life.
+
+      {/* Main section */}
+      <section className="px-7 pt-11 container mx-auto max-w-screen-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          {/* Left column - Wedding Info */}
+          <div className="flex flex-col gap-5">
+            <div>
+              <h1 className="text-2xl font-semibold">Prestigious Wedding Cars</h1>
+              <div className="h-[1px] w-12 bg-green-900 mt-2" />
+            </div>
+            <p>
+              Citywide London offers an affordable wedding car service, providing brides and grooms with the wedding cars of their dreams. You can expect a professional and experienced chauffeur driver who will chauffeur you in style on your special day, providing you with the luxury you deserve on the most important occasion of your life.
             </p>
-            <div className="flex items-center gap-1 ">
-              <div className="flex justify-center items-center text-green-900">
-                <FaArrowRight />
-              </div>
-              <span className="text-sm font-normal text-neutral-600">
-                We ensure the bride arrives relaxed and in style.
-              </span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="flex justify-center items-center text-green-900">
-                <FaArrowRight />
-              </div>
-              <span className="text-sm font-normal text-neutral-600">
-                Ensure the wedding party and wedding guests arrive promptly
-                before the bride.
-              </span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="flex justify-center items-center text-green-900">
-                <FaArrowRight />
-              </div>
-              <span className="text-sm font-normal text-neutral-600">
-                Transfer the Bride and Groom after their reception and onward to
-                their honeymoon.
-              </span>
-            </div>
+
+            <ul className="flex flex-col gap-2">
+              <li className="flex items-start gap-2">
+                <FaArrowRight className="text-green-900 mt-1" />
+                <span>We ensure the bride arrives relaxed and in style.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaArrowRight className="text-green-900 mt-1" />
+                <span>Ensure the wedding party and guests arrive promptly before the bride.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaArrowRight className="text-green-900 mt-1" />
+                <span>Transfer the bride and groom after their reception to their honeymoon destination.</span>
+              </li>
+            </ul>
           </div>
-          <div className="flex flex-col gap-3">
-            <h1>How We Work</h1>
-            <div className="h-[1px] w-12 bg-green-900"></div>
-            <div className="w-full mt-3">
-              <Image
-                width={500}
-                height={500}
-                src={"/images/gallery4.png"}
-                style={{ width: "100%", height: "auto", objectFit: "cover" }}
-              />
+
+          {/* Right column - Image */}
+          <div className="flex flex-col gap-5">
+            <div>
+              <h1 className="text-2xl font-semibold">How We Work</h1>
+              <div className="h-[1px] w-12 bg-green-900 mt-2" />
             </div>
+            <Image
+              width={600}
+              height={400}
+              src="/images/gallery4.png"
+              alt="Wedding transport"
+              className="rounded w-full h-auto object-cover"
+            />
           </div>
-        </main>
-        <div className="mx-7  mt-7 flex flex-col md:flex-row  gap-3">
-          {" "}
-          <Bogbutton title=" Our Services" url="/about" />
+        </div>
+
+        {/* Buttons */}
+        <div className="mt-10 flex flex-col md:flex-row gap-4">
+          <Bogbutton title="Our Services" url="/about" />
           <Bogbutton title="Request a Quote Now" url="/quotes" />
         </div>
       </section>
-      </Animater>
-    </div>
+    </Animater>
   );
 };
 
-export default page;
+export default WeddingPage;

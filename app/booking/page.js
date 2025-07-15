@@ -1,99 +1,107 @@
 import React from "react";
 import HeroAbout from "../components/HeroAbout";
 import Image from "next/image";
-import BookingForm from "../components/BookingForm";
-import BookingForm2 from "../components/BookingForm2";
 import BookForm3 from "../components/BookForm3";
 import Animater from "../components/Animater";
 
-const page = () => {
+const BookingPage = () => {
   return (
     <Animater>
-    <section>
-      <HeroAbout title="Booking" />
-      <main className=" pt-7 grid grid-cols-1  px-7 md:grid-cols-2 gap-3 container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl">
-      <div className="order-2 md:order-1">
-        <div>
-          <Image
-           
-            width={300}
-            height={300}
-            src="/images/area9.jpg"
-            alt="img"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </div>
-        <p className="py-7">
-          Request a booking form now using our easy to use form and we will get
-          back to you with a quote for your journey. Please book well in advance
-          (preferably at least 24hrs) to ensure availability of your chosen
-          vehicle and to receive the best possible price.
-        </p>
-        <h1 className="text-xl font-bold">Our Coaches</h1>
-        <p className="py-7">
-          At Citywide we offer a range of standard and Luxury Mini coaches
-          suitable for all your group and VIP Travels, which are all provided
-          with a professional driver. Our experience in the travel industry
-          gives us an edge over our competitors in London, and our client base
-          consists of major corporate banks and public offices. Both in London
-          and from overseas.
-        </p>
-        <p className="py-7">
-          We take pride in being a fully Licensed Operator, with a team of
-          highly skilled, CRB checked drivers, so you can rely on us, as you
-          need a transportation service you can rely on. Our drivers are
-          selected for their knowledge and experience to ensure that you
-          experience the highest levels of service and professionalism during
-          your trip. They are highly professional, always polite and punctual.
-        </p>
-        <p className="py-7">
-          We only provide vehicles which meet VOSA safety check guidelines and
-          road worthiness, so you’ll be sure of a pleasant trip with minimal
-          risk of trouble.
-        </p>
-        <p className="py-7">
-          We offer flexibility when it comes to collection and the end of your
-          trip, picking your party up and dropping you off at locations of your
-          choice for convenience and ease of access.Each journey is planned
-          prior to departure to ensure the driver is fully familiar with the
-          route, along with any access or parking limitations at the
-          destination.
-        </p>
-        <p className="py-7">
-          If you’ve flown into town to attend a conference, a big meeting, a
-          road show or simply need a city transfer we have the vehicle to suit
-          your needs.
-        </p>
-        <p className="py-7">
-          We provide our services at all the major London Airports, (Heathrow,
-          Gatwick, London City Airport, Stansted, and Luton). We offer Corporate
-          Travel Airport Transfers, Group Travel, School Transport, Nights Out,
-          Events & Exhibitions, Sporting Events, Road Shows and much more. We
-          will tailor our services to meet your needs and will ensure that you
-          travel in comfort and style.
-        </p>
-        <p className="py-7">
-          If you want to see a variety of sights in the city, we can plan your
-          route and stop off whenever and wherever you would like while your
-          professional chauffeur waits on you as you explore.
-        </p>
-        <p className="py-7">
-          Some of our most popular destinations to visit are, Bicester Village,
-          London Eye, London Kew Gardens, The O2 Arena, Thorpe Park, Wembley
-          Arena, Windsor Castle, Alton Towers, Chessington World of Adventures,
-          Legoland Windsor, Chiswick House & Gardens. These along with many
-          corporate events and exhibitions.
-        </p>
-      </div>
-      <div className="order-1 md:order-2 md:px-7"><BookForm3/></div>
+      <section>
+        <HeroAbout title="Booking" />
 
+        <main className="pt-7 px-7 grid grid-cols-1 md:grid-cols-2 gap-10 container mx-auto max-w-screen-xl">
+          
+          {/* Left Column - Booking Content */}
+          <div className="order-2 md:order-1">
+            <div className="w-full h-auto">
+              <Image
+                width={800}
+                height={500}
+                src="/images/area9.jpg"
+                alt="Citywide Booking"
+                className="w-full h-auto object-cover rounded"
+              />
+            </div>
 
+            <div className="pt-6 space-y-6 text-base leading-relaxed">
+              <p>
+                Request a booking form now using our easy-to-use form and we will get
+                back to you with a quote for your journey. Please book well in advance
+                (preferably at least 24hrs) to ensure availability of your chosen
+                vehicle and to receive the best possible price.
+              </p>
 
-      </main>
-     
-    </section>
+              <h2 className="text-xl font-bold">Our Coaches</h2>
+
+              <p>
+                At Citywide we offer a range of standard and luxury mini coaches
+                suitable for all your group and VIP travels, each with a professional
+                driver. Our experience in the travel industry gives us a competitive edge
+                in London. Our client base includes major corporate banks and public
+                offices from both the UK and abroad.
+              </p>
+
+              <p>
+                We are a fully licensed operator with CRB-checked drivers, carefully
+                selected for their professionalism and punctuality. Our drivers are
+                knowledgeable, polite, and trained to offer an exceptional travel
+                experience.
+              </p>
+
+              <p>
+                All vehicles meet VOSA safety guidelines, so your trip will be
+                comfortable and low-risk. We offer flexible pick-up and drop-off at
+                locations of your choice, and every journey is pre-planned to ensure the
+                route is clear and suitable.
+              </p>
+
+              <p>
+                Whether you're flying in for a conference, a meeting, or a roadshow—or
+                you just need a city transfer—we have the right vehicle for your needs.
+              </p>
+
+              <p>
+                We cover all major London airports: Heathrow, Gatwick, London City,
+                Stansted, and Luton. We also provide transport for corporate travel,
+                group events, school trips, exhibitions, nights out, sporting events, and
+                more.
+              </p>
+
+              <p>
+                Want to sightsee around the city? We can customize your route and stop
+                off wherever you like, while your chauffeur waits. Some popular
+                destinations include:
+              </p>
+
+              <ul className="list-disc list-inside">
+                <li>Bicester Village</li>
+                <li>London Eye</li>
+                <li>Kew Gardens</li>
+                <li>The O2 Arena</li>
+                <li>Thorpe Park</li>
+                <li>Wembley Arena</li>
+                <li>Windsor Castle</li>
+                <li>Alton Towers</li>
+                <li>Chessington World of Adventures</li>
+                <li>Legoland Windsor</li>
+                <li>Chiswick House & Gardens</li>
+              </ul>
+
+              <p>
+                ...and many more corporate events and exhibitions.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Booking Form */}
+          <div className="order-1 md:order-2 md:px-7">
+            <BookForm3 />
+          </div>
+        </main>
+      </section>
     </Animater>
   );
 };
 
-export default page;
+export default BookingPage;

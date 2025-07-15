@@ -1,9 +1,5 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
-
-
 import SwiperTestimonial from "./SwiperTestimonial";
 import GalleryItem from "./GalleryItem";
 import { gallery } from "./Data";
@@ -11,37 +7,46 @@ import ModalGallery from "./ModalGallery";
 
 const Area8 = () => {
   const [isOpen, setIsopen] = useState(false);
-  const Handleisopen = () => {
-    setIsopen(false);
-  };
+  
   return (
-    <section>
-      <ModalGallery isOpen={isOpen} Handleisopen={Handleisopen} />
-      <div
-        className={` ${
-          isOpen
-            ? "opacity-0 hidden tranlate-y-[2000px]"
-            : " block opacity-100 tranlate-y-[1px]"
-        } transition container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg   xl:max-w-screen-xl 2xl:max-w-screen-xl mb-14 pb-5 grid grid-cols-1 md:grid-cols-2 md:gap-14`}
-      >
-        <div>
-          <h1 className="text-xl text-center">Photo Gallery</h1>
-          <div className="w-14 h-[2px] bg-green-900 mx-auto mb-10 mt-2"></div>
-          <div
-            onClick={(e) => setIsopen(true)}
-            className="grid grid-cols-2 gap-7"
+    <section className="bg-gray-50 py-14">
+      <div className="container md:max-w-screen-md md:mx-auto lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-xl mb-14 pb-5 grid grid-cols-1 md:grid-cols-2 md:gap-14">
+        {/* Photo Gallery Section */}
+        <div className="mb-10 md:mb-0">
+          <h2 className="text-2xl text-center font-bold text-gray-800">Our Luxury Fleet Gallery</h2>
+          <div 
+            className="w-14 h-[2px] bg-green-900 mx-auto mb-10 mt-2"
+            aria-hidden="true"
+          ></div>
+          <div 
+            onClick={() => setIsopen(true)}
+            className="grid grid-cols-2 gap-4 cursor-pointer"
+            role="button"
+            aria-label="View our photo gallery"
+            tabIndex="0"
           >
             {gallery?.map((item, key) => (
               <GalleryItem item={item} key={key} />
             ))}
           </div>
         </div>
+
+        {/* Testimonials Section */}
         <div>
-          <h1 className="text-xl text-center">testimonial</h1>
-          <div className="w-14 h-[2px] bg-green-900 mx-auto mb-10 mt-2"></div>
+          <h2 className="text-2xl text-center font-bold text-gray-800">Client Testimonials</h2>
+          <div 
+            className="w-14 h-[2px] bg-green-900 mx-auto mb-10 mt-2"
+            aria-hidden="true"
+          ></div>
           <SwiperTestimonial />
         </div>
       </div>
+
+      <ModalGallery 
+        isOpen={isOpen} 
+        Handleisopen={() => setIsopen(false)} 
+        ariaLabel="Luxury fleet gallery modal"
+      />
     </section>
   );
 };

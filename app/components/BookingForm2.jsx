@@ -1,202 +1,241 @@
 "use client";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Thankyou from "./Thankyou";
 import { FaSpinner } from "react-icons/fa6";
 
 const BookingForm2 = () => {
   const [thankyou, setThankyou] = useState(false);
-  const [btnloading, setbtnloading] = useState(false);
-  const router = useRouter();
+  const [submitError, setSubmitError] = useState(false);
   const {
     register,
     handleSubmit,
-    watch,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
-  const onSubmit = (data) => {console.log(data);getdata(data)};
-  const getdata = async (data) => {
-    // Send the data to the server in JSON format.
-    const JSONdata = JSON.stringify(data);
-    setbtnloading(true)
 
-    // API endpoint where we send form data.
-    const endpoint = "/api/nodemailer";
+  const onSubmit = async (data) => {
+    try {
+      setSubmitError(false);
+      const response = await fetch("/api/nodemailer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    // Send the form data to our forms API on Vercel and get a response.
-    const response = await fetch(endpoint, options);
-
-    // Get the response data from server as JSON.
-    // If server returns the name submitted, that means the form works.
-    const result = await response.json();
-    const results = result.success;
- results && setThankyou(true)
-    //results && router.push("/thankyou");
-    reset();
+      const result = await response.json();
+      if (result.success) {
+        setThankyou(true);
+        reset();
+      } else {
+        setSubmitError(true);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmitError(true);
+    }
   };
-  const Formi = function () {
+
+  if (thankyou) return <Thankyou />;
+  if (submitError) {
     return (
-      <>
-        <form
-          className="shadow-md bg-slate-100 md:p-3"
-          onSubmit={handleSubmit(onSubmit)}
+      <div className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700">
+        <h2 className="text-lg font-bold mb-2">Submission Error</h2>
+        <p>There was an error submitting your form. Please try again.</p>
+        <button
+          onClick={() => setSubmitError(false)}
+          className="mt-3 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
         >
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Name <span className="text-red-600">*</span>
-              </label>
-              <input
-                {...register("name", { required: true })}
-                className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
-                required
-                type="text"
-                placeholder="Please enter your name"
-              />
-              {errors.name && "First name is required"}
-            </div>
-
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Business or referal name
-              </label>
-              <input
-                {...register("business", { required: false })}
-                className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
-                type="text"
-                placeholder="Business or referal name"
-              />
-            </div>
-          </fieldset>
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Phone <span className="text-red-600">*</span>
-              </label>
-              <input
-                {...register("phone", { required: true })}
-                className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
-                required
-                type="text"
-                placeholder="Enter Phone number"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="username"
-              >
-                Your Email <span className="text-red-600">*</span>
-              </label>
-              <input
-                {...register("email", { required: true })}
-                className="shadow appearance-none border rounded 
-          w-full py-2 px-3 text-gray-700
-         leading-tight focus:outline-none 
-         focus:shadow-outline"
-                required
-                type="email"
-                placeholder="Please enter your email"
-              />
-            </div>
-          </fieldset>
-          <fieldset className=" grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="">
-              <label
-                htmlFor="about"
-                className="block text-base font-semibold leading-6 text-gray-900"
-              >
-                Your pick up address <span className="text-red-600">*</span>
-              </label>
-              <div className="mt-2">
-                <textarea
-                  {...register("pickupaddress", { required: true })}
-                  rows="3"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
-            </div>
-            <div className="">
-              <label
-                htmlFor="about"
-                className="block text-base font-semibold leading-6 text-gray-900"
-              >
-                Your destination address <span className="text-red-600">*</span>
-              </label>
-              <div className="mt-2">
-                <textarea
-                  {...register("destination", { required: true })}
-                  rows="3"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <div className="col-span-full pt-7">
-              <label
-                htmlFor="about"
-                className="block text-base font-semibold leading-6 text-gray-900"
-              >
-                Your message (optional)
-              </label>
-              <div className="mt-2">
-                <textarea
-                  {...register("omessage")}
-                  rows="3"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
-                ></textarea>
-              </div>
-            </div>
-          </fieldset>
-          <button
-            type="submit"
-            className="w-full mt-7 bg-green-900   disabled:bg-black flex justify-center items-center gap-3  py-7 text-white shadow-sm rounded-md hover:bg-green-700"
-         disabled= {btnloading?true:false}
-        
-          >
-            {btnloading?<>< FaSpinner className="text-center animate-spin text-yellow-300"/> Processing</>:"SEND"}
-          </button>
-   
-          
-        </form>
-      </>
+          Try Again
+        </button>
+      </div>
     );
-  };
-  return thankyou ? <Thankyou /> : <Formi />;
+  }
+
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="shadow-md bg-slate-100 md:p-3"
+      aria-label="Booking form"
+    >
+      {/* Personal Information Section */}
+      <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <legend className="sr-only">Personal Information</legend>
+        
+        {/* Name Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+            Name <span className="text-red-600">*</span>
+          </label>
+          <input
+            {...register("name", { required: "Name is required" })}
+            id="name"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-green-900"
+            type="text"
+            placeholder="Please enter your name"
+            aria-invalid={errors.name ? "true" : "false"}
+            aria-describedby="name-error"
+          />
+          {errors.name && (
+            <p id="name-error" className="mt-1 text-sm text-red-600">
+              {errors.name.message}
+            </p>
+          )}
+        </div>
+
+        {/* Business/Referral Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="business">
+            Business or referral name
+          </label>
+          <input
+            {...register("business")}
+            id="business"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-green-900"
+            type="text"
+            placeholder="Business or referral name"
+          />
+        </div>
+      </fieldset>
+
+      {/* Contact Information Section */}
+      <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <legend className="sr-only">Contact Information</legend>
+        
+        {/* Phone Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+            Phone <span className="text-red-600">*</span>
+          </label>
+          <input
+            {...register("phone", { 
+              required: "Phone number is required",
+              pattern: {
+                value: /^[0-9\s+-]+$/,
+                message: "Please enter a valid phone number"
+              }
+            })}
+            id="phone"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-green-900"
+            type="tel"
+            placeholder="Enter Phone number"
+            aria-invalid={errors.phone ? "true" : "false"}
+            aria-describedby="phone-error"
+          />
+          {errors.phone && (
+            <p id="phone-error" className="mt-1 text-sm text-red-600">
+              {errors.phone.message}
+            </p>
+          )}
+        </div>
+
+        {/* Email Field */}
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            Your Email <span className="text-red-600">*</span>
+          </label>
+          <input
+            {...register("email", { 
+              required: "Email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address"
+              }
+            })}
+            id="email"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-green-900"
+            type="email"
+            placeholder="Please enter your email"
+            aria-invalid={errors.email ? "true" : "false"}
+            aria-describedby="email-error"
+          />
+          {errors.email && (
+            <p id="email-error" className="mt-1 text-sm text-red-600">
+              {errors.email.message}
+            </p>
+          )}
+        </div>
+      </fieldset>
+
+      {/* Address Information Section */}
+      <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <legend className="sr-only">Address Information</legend>
+        
+        {/* Pickup Address */}
+        <div className="mb-4">
+          <label htmlFor="pickupaddress" className="block text-base font-semibold leading-6 text-gray-900">
+            Your pick up address <span className="text-red-600">*</span>
+          </label>
+          <textarea
+            {...register("pickupaddress", { required: "Pickup address is required" })}
+            id="pickupaddress"
+            rows="3"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+            aria-invalid={errors.pickupaddress ? "true" : "false"}
+            aria-describedby="pickup-error"
+          ></textarea>
+          {errors.pickupaddress && (
+            <p id="pickup-error" className="mt-1 text-sm text-red-600">
+              {errors.pickupaddress.message}
+            </p>
+          )}
+        </div>
+
+        {/* Destination Address */}
+        <div className="mb-4">
+          <label htmlFor="destination" className="block text-base font-semibold leading-6 text-gray-900">
+            Your destination address <span className="text-red-600">*</span>
+          </label>
+          <textarea
+            {...register("destination", { required: "Destination address is required" })}
+            id="destination"
+            rows="3"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+            aria-invalid={errors.destination ? "true" : "false"}
+            aria-describedby="destination-error"
+          ></textarea>
+          {errors.destination && (
+            <p id="destination-error" className="mt-1 text-sm text-red-600">
+              {errors.destination.message}
+            </p>
+          )}
+        </div>
+      </fieldset>
+
+      {/* Optional Message */}
+      <div className="mb-4">
+        <label htmlFor="omessage" className="block text-base font-semibold leading-6 text-gray-900">
+          Your message (optional)
+        </label>
+        <textarea
+          {...register("omessage")}
+          id="omessage"
+          rows="3"
+          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-900 sm:text-sm sm:leading-6"
+          placeholder="Any special requests or additional information"
+        ></textarea>
+      </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full mt-7 bg-green-900 disabled:bg-gray-600 flex justify-center items-center gap-3 py-4 text-white shadow-sm rounded-md hover:bg-green-700 transition-colors duration-200"
+        aria-busy={isSubmitting}
+      >
+        {isSubmitting ? (
+          <>
+            <FaSpinner className="animate-spin text-yellow-300" />
+            Processing
+          </>
+        ) : (
+          "SEND BOOKING REQUEST"
+        )}
+      </button>
+    </form>
+  );
 };
 
 export default BookingForm2;
